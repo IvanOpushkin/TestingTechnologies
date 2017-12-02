@@ -10,19 +10,32 @@ public class MealWithExceed extends BaseTo {
 
     private final String description;
 
-    private final int calories;
+    private final String type1;
+    private final String type2;
+
+
+
+    private final int cod;
+
+    private final String naimenovanie;
 
     private final boolean exceed;
 
     public MealWithExceed(@JsonProperty("id") Integer id,
                           @JsonProperty("dateTime") LocalDateTime dateTime,
                           @JsonProperty("description") String description,
-                          @JsonProperty("calories") int calories,
+                          @JsonProperty("type1") String type1,
+                          @JsonProperty("type2") String type2,
+                          @JsonProperty("cod") int cod,
+                          @JsonProperty("naimenovanie") String naimenovanie,
                           @JsonProperty("exceed") boolean exceed) {
         super(id);
         this.dateTime = dateTime;
         this.description = description;
-        this.calories = calories;
+        this.type1 = type1;
+        this.type2 = type2;
+        this.cod = cod;
+        this.naimenovanie = naimenovanie;
         this.exceed = exceed;
     }
 
@@ -34,8 +47,20 @@ public class MealWithExceed extends BaseTo {
         return description;
     }
 
-    public int getCalories() {
-        return calories;
+    public String getType1() {
+        return type1;
+    }
+
+    public String getType2() {
+        return type2;
+    }
+
+    public int getCod() {
+        return cod;
+    }
+
+    public String getNaimenovanie() {
+        return naimenovanie;
     }
 
     public boolean isExceed() {
@@ -45,10 +70,10 @@ public class MealWithExceed extends BaseTo {
     @Override
     public String toString() {
         return "MealWithExceed{" +
-                "id=" + id +
-                ", dateTime=" + dateTime +
+                "dateTime=" + dateTime +
                 ", description='" + description + '\'' +
-                ", calories=" + calories +
+                ", cod=" + cod +
+                ", naimenovanie='" + naimenovanie + '\'' +
                 ", exceed=" + exceed +
                 '}';
     }

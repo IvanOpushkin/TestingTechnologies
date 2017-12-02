@@ -70,7 +70,12 @@
             <tr>
                 <th><spring:message code="meal.dateTime"/></th>
                 <th><spring:message code="meal.description"/></th>
-                <th><spring:message code="meal.calories"/></th>
+
+                <th>Тип1</th>
+                <th>Тип2</th>
+                <th>Код(not null поставлен)</th>
+                <th>Наименование</th>
+
                 <th></th>
                 <th></th>
             </tr>
@@ -108,14 +113,41 @@
                                    placeholder="<spring:message code="meal.description"/>">
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="calories" class="control-label col-xs-3"><spring:message
-                                code="meal.calories"/></label>
+                        <label for="type1" class="control-label col-xs-3">Тип1</label>
 
                         <div class="col-xs-9">
-                            <input type="number" class="form-control" id="calories" name="calories" placeholder="1000">
+                            <input type="text" class="form-control" id="type1" name="type1"
+                                   placeholder="type1">
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label for="type2" class="control-label col-xs-3">Тип2</label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="type2" name="type2"
+                                   placeholder="type2">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cod" class="control-label col-xs-3">Код</label>
+
+                        <div class="col-xs-9">
+                            <input type="number" class="form-control" id="cod" name="cod" placeholder="1000">
+                        </div>
+                    </div>
+                    <!-- Наименование в добавление -->
+                    <div class="form-group">
+                        <label for="naimenovanie" class="control-label col-xs-3">Наименование</label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="naimenovanie" name="naimenovanie" placeholder="1000">
+                        </div>
+                    </div>
+                    <!-- (K) Наименование в добавление -->
                     <div class="form-group">
                         <div class="col-xs-offset-3 col-xs-9">
                             <button class="btn btn-primary" type="button" onclick="save()">

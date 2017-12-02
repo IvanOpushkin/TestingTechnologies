@@ -33,13 +33,27 @@ $(function () {
     datatableApi = $('#datatable').DataTable(extendsOpts({
         "columns": [
             {
-                "data": "dateTime"
+                //По аналогии добавим сначала пиктюр следующей
+                "data": "dateTime",
+                //type, row может убрать тк юз даты идёт
+                "render": function(data, type, row) {
+                    return '<img src="'+data+'" style="height:240px;width:180px;"/>';
+                }
             },
             {
                 "data": "description"
             },
             {
-                "data": "calories"
+                "data": "type1"
+            },
+            {
+                "data": "type2"
+            },
+            {
+                "data": "cod"
+            },
+            {
+                "data": "naimenovanie"
             },
             {
                 "render": renderEditBtn,
@@ -51,6 +65,7 @@ $(function () {
                 "defaultContent": "",
                 "orderable": false
             }
+
         ],
         "order": [
             [

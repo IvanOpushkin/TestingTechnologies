@@ -40,13 +40,34 @@ public class Meal extends AbstractBaseEntity {
     @Column(name = "description", nullable = false)
     @NotBlank
     @Size(min = 2, max = 120)
+    //@SafeHtml чекс текст на зловредные скрипты, чтобы их не было. Как в гугл поисковике
     @SafeHtml(groups = {View.ValidatedRestUI.class})
     private String description;
 
-    @Column(name = "calories", nullable = false)
-    @Range(min = 10, max = 5000)
+
+    @Column(name = "type1", nullable = false)
+    @NotBlank
+    @SafeHtml(groups = {View.ValidatedRestUI.class})
+    private String type1;
+
+    @Column(name = "type2", nullable = false)
+    @NotBlank
+    @SafeHtml(groups = {View.ValidatedRestUI.class})
+    private String type2;
+
+
+
+    @Column(name = "cod", nullable = false)
+    //@Range(min = 10, max = 5000)
     @NotNull
-    private Integer calories;
+    private Integer cod;
+
+    @Column(name = "naimenovanie", nullable = false)
+    @NotBlank
+    @SafeHtml(groups = {View.ValidatedRestUI.class})
+    private String naimenovanie;
+
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
@@ -57,15 +78,16 @@ public class Meal extends AbstractBaseEntity {
     public Meal() {
     }
 
-    public Meal(LocalDateTime dateTime, String description, int calories) {
-        this(null, dateTime, description, calories);
+    public Meal(LocalDateTime dateTime, String description, int cod, String naimenovanie) {
+        this(null, dateTime, description, cod, naimenovanie);
     }
 
-    public Meal(Integer id, LocalDateTime dateTime, String description, int calories) {
+    public Meal(Integer id, LocalDateTime dateTime, String description, int cod, String naimenovanie) {
         super(id);
         this.dateTime = dateTime;
         this.description = description;
-        this.calories = calories;
+        this.cod = cod;
+        this.naimenovanie = naimenovanie;
     }
 
     public LocalDateTime getDateTime() {
@@ -76,8 +98,12 @@ public class Meal extends AbstractBaseEntity {
         return description;
     }
 
-    public int getCalories() {
-        return calories;
+    public Integer getCod() {
+        return cod;
+    }
+
+    public void setCod(Integer cod) {
+        this.cod = cod;
     }
 
     public LocalDate getDate() {
@@ -96,10 +122,6 @@ public class Meal extends AbstractBaseEntity {
         this.description = description;
     }
 
-    public void setCalories(Integer calories) {
-        this.calories = calories;
-    }
-
     public User getUser() {
         return user;
     }
@@ -108,13 +130,38 @@ public class Meal extends AbstractBaseEntity {
         this.user = user;
     }
 
+    public String getNaimenovanie() {
+        return naimenovanie;
+    }
+
+    public void setNaimenovanie(String naimenovanie) {
+        this.naimenovanie = naimenovanie;
+    }
+
+    public String getType1() {
+        return type1;
+    }
+
+    public void setType1(String type1) {
+        this.type1 = type1;
+    }
+
+    public String getType2() {
+        return type2;
+    }
+
+    public void setType2(String type2) {
+        this.type2 = type2;
+    }
+
     @Override
     public String toString() {
         return "Meal{" +
-                "id=" + getId() +
-                ", dateTime=" + dateTime +
+                "dateTime=" + dateTime +
                 ", description='" + description + '\'' +
-                ", calories=" + calories +
+                ", cod=" + cod +
+                ", naimenovanie='" + naimenovanie + '\'' +
+                ", user=" + user +
                 '}';
     }
 }

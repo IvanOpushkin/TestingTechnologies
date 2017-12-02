@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS users;
 DROP SEQUENCE IF EXISTS global_seq;
 
 CREATE SEQUENCE global_seq START 100000;
+--КОД 200000 чтобы не баговалось по фотке
 
 CREATE TABLE users
 (
@@ -30,7 +31,28 @@ CREATE TABLE meals (
   user_id     INTEGER   NOT NULL,
   date_time   TIMESTAMP NOT NULL,
   description TEXT      NOT NULL,
-  calories    INT       NOT NULL,
+-- меняем калорис их нет в базовой версии
+  cod         INT  DEFAULT 0 NOT NULL,
+
+  -- calories    INT       NOT NULL,
+
+  type1       TEXT      DEFAULT 'o',
+  type2       TEXT      DEFAULT 'o',
+
+  /*   cod         INT       DEFAULT 0, начальный был без нот нулл посмотрим
+
+    proizvoditel   TEXT   DEFAULT 'o',
+    edizmereniya   TEXT   DEFAULT 'o',
+    kolvo       INT       DEFAULT 0,
+    cena        INT       DEFAULT 0,
+    primechanie TEXT      DEFAULT 'o',
+    articul     TEXT     DEFAULT 'o',
+    picture     TEXT      DEFAULT 'o',
+
+    */
+
+  naimenovanie   TEXT   DEFAULT 'o',
+
   FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
 CREATE UNIQUE INDEX meals_unique_user_datetime_idx ON meals (user_id, date_time)

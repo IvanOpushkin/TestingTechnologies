@@ -24,7 +24,9 @@ function extendsOpts(opts) {
                 "url": ajaxUrl,
                 "dataSrc": ""
             },
-            "paging": false,
+            "pageLength": 3,
+
+            "paging": true,
             "info": true,
             "language": {
                 "search": i18n["common.search"]
