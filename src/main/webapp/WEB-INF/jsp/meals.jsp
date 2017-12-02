@@ -76,6 +76,15 @@
                 <th>Код(not null поставлен)</th>
                 <th>Наименование</th>
 
+                <!-- proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture -->
+                <th>Производитель</th>
+                <th>Ед.изм</th>
+                <th>Кол-во</th>
+                <th>Цена</th>
+                <th>Примечание</th>
+                <th>Артикул</th>
+                <th>Картинка</th>
+
                 <th></th>
                 <th></th>
             </tr>
@@ -148,6 +157,65 @@
                         </div>
                     </div>
                     <!-- (K) Наименование в добавление -->
+                    <!-- proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture -->
+                    <div class="form-group">
+                        <label for="proizvoditel" class="control-label col-xs-3">Производитель</label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="proizvoditel" name="proizvoditel" placeholder="1000">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edizmereniya" class="control-label col-xs-3">Ед.Изм</label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="edizmereniya" name="edizmereniya" placeholder="1000">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kolvo" class="control-label col-xs-3">Кол-во</label>
+
+                        <div class="col-xs-9">
+                            <input type="number" class="form-control" id="kolvo" name="kolvo" placeholder="1000">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cena" class="control-label col-xs-3">Цена</label>
+
+                        <div class="col-xs-9">
+                            <input type="number" class="form-control" id="cena" name="cena" placeholder="1000">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="primechanie" class="control-label col-xs-3">Примечание</label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="primechanie" name="primechanie" placeholder="1000">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="articul" class="control-label col-xs-3">Артикул</label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="articul" name="articul" placeholder="1000">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="picture" class="control-label col-xs-3">Картинко-имя(mb сделать картинку справа)</label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="picture" name="picture" placeholder="1000">
+                        </div>
+                    </div>
+
+                    <!-- -->
+
                     <div class="form-group">
                         <div class="col-xs-offset-3 col-xs-9">
                             <button class="btn btn-primary" type="button" onclick="save()">

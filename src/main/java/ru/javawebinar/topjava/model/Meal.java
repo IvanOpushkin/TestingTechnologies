@@ -67,6 +67,58 @@ public class Meal extends AbstractBaseEntity {
     @SafeHtml(groups = {View.ValidatedRestUI.class})
     private String naimenovanie;
 
+    //5 текстовых и 2 цифровые (2 2(цифр) 3)
+
+
+
+    //proizvoditel
+    //1
+    @Column(name = "proizvoditel", nullable = false)
+    @NotBlank
+    @SafeHtml(groups = {View.ValidatedRestUI.class})
+    private String proizvoditel;
+
+    //edizmereniya
+    //2
+    @Column(name = "edizmereniya", nullable = false)
+    @NotBlank
+    @SafeHtml(groups = {View.ValidatedRestUI.class})
+    private String edizmereniya;
+
+    //kolvo
+    //3
+    @Column(name = "kolvo", nullable = false)
+    //@Range(min = 10, max = 5000)
+    @NotNull
+    private Integer kolvo;
+
+    //cena
+    //4
+    @Column(name = "cena", nullable = false)
+    //@Range(min = 10, max = 5000)
+    @NotNull
+    private Integer cena;
+
+    //primechanie
+    //5
+    @Column(name = "primechanie", nullable = false)
+    @NotBlank
+    @SafeHtml(groups = {View.ValidatedRestUI.class})
+    private String primechanie;
+
+    //articul
+    //6
+    @Column(name = "articul", nullable = false)
+    @NotBlank
+    @SafeHtml(groups = {View.ValidatedRestUI.class})
+    private String articul;
+
+    //picture
+    //7
+    @Column(name = "picture", nullable = false)
+    @NotBlank
+    @SafeHtml(groups = {View.ValidatedRestUI.class})
+    private String picture;
 
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -138,6 +190,65 @@ public class Meal extends AbstractBaseEntity {
         this.naimenovanie = naimenovanie;
     }
 
+   //Новых 14
+
+
+    public String getProizvoditel() {
+        return proizvoditel;
+    }
+
+    public void setProizvoditel(String proizvoditel) {
+        this.proizvoditel = proizvoditel;
+    }
+
+    public String getEdizmereniya() {
+        return edizmereniya;
+    }
+
+    public void setEdizmereniya(String edizmereniya) {
+        this.edizmereniya = edizmereniya;
+    }
+
+    public Integer getKolvo() {
+        return kolvo;
+    }
+
+    public void setKolvo(Integer kolvo) {
+        this.kolvo = kolvo;
+    }
+
+    public Integer getCena() {
+        return cena;
+    }
+
+    public void setCena(Integer cena) {
+        this.cena = cena;
+    }
+
+    public String getPrimechanie() {
+        return primechanie;
+    }
+
+    public void setPrimechanie(String primechanie) {
+        this.primechanie = primechanie;
+    }
+
+    public String getArticul() {
+        return articul;
+    }
+
+    public void setArticul(String articul) {
+        this.articul = articul;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
     public String getType1() {
         return type1;
     }
@@ -159,8 +270,17 @@ public class Meal extends AbstractBaseEntity {
         return "Meal{" +
                 "dateTime=" + dateTime +
                 ", description='" + description + '\'' +
+                ", type1='" + type1 + '\'' +
+                ", type2='" + type2 + '\'' +
                 ", cod=" + cod +
                 ", naimenovanie='" + naimenovanie + '\'' +
+                ", proizvoditel='" + proizvoditel + '\'' +
+                ", edizmereniya='" + edizmereniya + '\'' +
+                ", kolvo=" + kolvo +
+                ", cena=" + cena +
+                ", primechanie='" + primechanie + '\'' +
+                ", articul='" + articul + '\'' +
+                ", picture='" + picture + '\'' +
                 ", user=" + user +
                 '}';
     }

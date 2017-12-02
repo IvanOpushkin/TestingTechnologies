@@ -33,11 +33,27 @@ CREATE TABLE meals (
   description TEXT      NOT NULL,
 -- меняем калорис их нет в базовой версии
   cod         INT  DEFAULT 0 NOT NULL,
+  naimenovanie   TEXT   DEFAULT 'o',
 
   -- calories    INT       NOT NULL,
 
   type1       TEXT      DEFAULT 'o',
   type2       TEXT      DEFAULT 'o',
+
+  --Также есть ошибка с базой данных по Дате, если повторяется,
+  -- тк по еде в одно время одна еда у нас будет (?)
+
+  --5 текст 2 инт
+
+
+  proizvoditel   TEXT   DEFAULT 'o',
+  edizmereniya   TEXT   DEFAULT 'o',
+  kolvo       INT       DEFAULT 0,
+  cena        INT       DEFAULT 0,
+  primechanie TEXT      DEFAULT 'o',
+  articul     TEXT     DEFAULT 'o',
+  picture     TEXT      DEFAULT 'o',
+
 
   /*   cod         INT       DEFAULT 0, начальный был без нот нулл посмотрим
 
@@ -51,7 +67,7 @@ CREATE TABLE meals (
 
     */
 
-  naimenovanie   TEXT   DEFAULT 'o',
+
 
   FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );

@@ -50,15 +50,27 @@ public class JdbcMealRepositoryImpl implements MealRepository {
                 .addValue("cod", meal.getCod())
                 .addValue("date_time", meal.getDateTime())
                 .addValue("naimenovanie",meal.getNaimenovanie())
+
+                .addValue("proizvoditel",meal.getProizvoditel())
+                .addValue("edizmereniya",meal.getEdizmereniya())
+                .addValue("kolvo",meal.getKolvo())
+                .addValue("cena",meal.getCena())
+                .addValue("primechanie",meal.getPrimechanie())
+                .addValue("articul",meal.getArticul())
+                .addValue("picture",meal.getPicture())
+
                 .addValue("user_id", userId);
 
         if (meal.isNew()) {
             Number newId = insertMeal.executeAndReturnKey(map);
             meal.setId(newId.intValue());
         } else {
+            //proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture
+
             if (namedParameterJdbcTemplate.update("" +
                             "UPDATE meals " +
-                            "   SET description=:description, type1=: type1, type2=: type2, cod=:cod, date_time=:date_time, naimenovanie=:naimenovanie " +
+                            "   SET description=:description, type1=:type1, type2=:type2, cod=:cod, date_time=:date_time, naimenovanie=:naimenovanie," +
+                            " proizvoditel=:proizvoditel, edizmereniya=:edizmereniya, kolvo=:kolvo, cena=:cena, primechanie=:primechanie, articul=:articul , picture=:picture " +
                             " WHERE id=:id AND user_id=:user_id"
                     , map) == 0) {
                 return null;

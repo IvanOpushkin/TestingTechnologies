@@ -33,12 +33,17 @@ $(function () {
     datatableApi = $('#datatable').DataTable(extendsOpts({
         "columns": [
             {
-                //По аналогии добавим сначала пиктюр следующей
-                "data": "dateTime",
-                //type, row может убрать тк юз даты идёт
-                "render": function(data, type, row) {
-                    return '<img src="'+data+'" style="height:240px;width:180px;"/>';
+                "data": "picture",
+
+               "render": function(data, type, row)
+                {
+                   return '<img src="/PhotoCablesMendeleev/751osnova.jpg" style="height:240px;width:180px;"/>';
                 }
+            },
+            {
+                //По аналогии добавим сначала пиктюр следующей
+                "data": "dateTime"
+                //type, row может убрать тк юз даты идёт
             },
             {
                 "data": "description"
@@ -54,6 +59,26 @@ $(function () {
             },
             {
                 "data": "naimenovanie"
+            },
+
+            //proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture
+            {
+                "data": "proizvoditel"
+            },
+            {
+                "data": "edizmereniya"
+            },
+            {
+                "data": "kolvo"
+            },
+            {
+                "data": "cena"
+            },
+            {
+                "data": "primechanie"
+            },
+            {
+                "data": "articul"
             },
             {
                 "render": renderEditBtn,
