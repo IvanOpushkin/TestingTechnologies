@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS meals;
 DROP TABLE IF EXISTS users;
 DROP SEQUENCE IF EXISTS global_seq;
 
-CREATE SEQUENCE global_seq START 700000;
+CREATE SEQUENCE global_seq START 100000;
 --КОД 200000 чтобы не баговалось по фотке
 
 CREATE TABLE users
