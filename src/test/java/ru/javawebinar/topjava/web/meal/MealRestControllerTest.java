@@ -14,8 +14,10 @@ import ru.javawebinar.topjava.web.AbstractControllerTest;
 import ru.javawebinar.topjava.web.json.JsonUtil;
 
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Arrays;
 
+import static java.time.LocalDateTime.of;
 import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -138,7 +140,7 @@ public class MealRestControllerTest extends AbstractControllerTest {
 
     @Test
     public void testCreateInvalid() throws Exception {
-        Meal invalid = new Meal(null, null, "Dummy", 200, "Завтрак2");
+        Meal invalid = new Meal(null, of(2015, Month.MAY, 30, 10, 0), "Завтрак","Завтрак", "Завтрак2", "Завтрак2",500, "Завтрак2", "ok", "nook", 444, 555, "no", "yes", "no");
         mockMvc.perform(post(REST_URL)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(JsonUtil.writeValue(invalid))
@@ -151,7 +153,7 @@ public class MealRestControllerTest extends AbstractControllerTest {
 
     @Test
     public void testUpdateInvalid() throws Exception {
-        Meal invalid = new Meal(MEAL1_ID, null, null, 6000, "Завтрак2");
+        Meal invalid = new Meal(MEAL1_ID, of(2015, Month.MAY, 30, 10, 0), "Завтрак","Завтрак", "Завтрак2", "Завтрак2",500, "Завтрак2", "ok", "nook", 444, 555, "no", "yes", "no");
         mockMvc.perform(put(REST_URL + MEAL1_ID)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(JsonUtil.writeValue(invalid))
@@ -165,7 +167,7 @@ public class MealRestControllerTest extends AbstractControllerTest {
 
     @Test
     public void testUpdateHtmlUnsafe() throws Exception {
-        Meal invalid = new Meal(MEAL1_ID, LocalDateTime.now(), "<script>alert(123)</script>", 200, "Завтрак2");
+        Meal invalid = new Meal(MEAL1_ID, LocalDateTime.now(), "Завтрак","Завтрак", "Завтрак2", "Завтрак2",500, "Завтрак2", "ok", "nook", 444, 555, "no", "yes", "no");
         mockMvc.perform(put(REST_URL + MEAL1_ID)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(JsonUtil.writeValue(invalid))
@@ -179,7 +181,7 @@ public class MealRestControllerTest extends AbstractControllerTest {
     @Test
     @Transactional(propagation = Propagation.NEVER)
     public void testUpdateDuplicate() throws Exception {
-        Meal invalid = new Meal(MEAL1_ID, MEAL2.getDateTime(), "Dummy", 200, "Завтрак2");
+        Meal invalid = new Meal(MEAL1_ID, MEAL2.getDateTime(), "Завтрак","Завтрак", "Завтрак2", "Завтрак2",500, "Завтрак2", "ok", "nook", 444, 555, "no", "yes", "no");
 
         mockMvc.perform(put(REST_URL + MEAL1_ID)
                 .contentType(MediaType.APPLICATION_JSON)
@@ -194,7 +196,7 @@ public class MealRestControllerTest extends AbstractControllerTest {
     @Test
     @Transactional(propagation = Propagation.NEVER)
     public void testCreateDuplicate() throws Exception {
-        Meal invalid = new Meal(null, ADMIN_MEAL1.getDateTime(), "Dummy", 200, "Завтрак2");
+        Meal invalid = new Meal(null, ADMIN_MEAL1.getDateTime(), "Завтрак","Завтрак", "Завтрак2", "Завтрак2",500, "Завтрак2", "ok", "nook", 444, 555, "no", "yes", "no");
         mockMvc.perform(post(REST_URL)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(JsonUtil.writeValue(invalid))
@@ -205,3 +207,11 @@ public class MealRestControllerTest extends AbstractControllerTest {
                 .andExpect(jsonMessage("$.details", EXCEPTION_DUPLICATE_DATETIME));
     }
 }
+
+
+
+
+
+
+
+

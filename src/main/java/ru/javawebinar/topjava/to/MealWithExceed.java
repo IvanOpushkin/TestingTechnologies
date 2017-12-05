@@ -9,6 +9,9 @@ public class MealWithExceed extends BaseTo {
     private final LocalDateTime dateTime;
 
     private final String description;
+
+    private final String calories;
+
     private final String type1;
     private final String type2;
     private final int cod;
@@ -29,6 +32,7 @@ public class MealWithExceed extends BaseTo {
     public MealWithExceed(@JsonProperty("id") Integer id,
                           @JsonProperty("dateTime") LocalDateTime dateTime,
                           @JsonProperty("description") String description,
+                        @JsonProperty("calories") String calories,
                           @JsonProperty("type1") String type1,
                           @JsonProperty("type2") String type2,
                           @JsonProperty("cod") int cod,
@@ -44,6 +48,9 @@ public class MealWithExceed extends BaseTo {
         super(id);
         this.dateTime = dateTime;
         this.description = description;
+
+        this.calories = calories;
+
         this.type1 = type1;
         this.type2 = type2;
         this.cod = cod;
@@ -67,6 +74,11 @@ public class MealWithExceed extends BaseTo {
 
     public String getDescription() {
         return description;
+    }
+
+
+    public String getCalories() {
+        return calories;
     }
 
     public String getType1() {
@@ -122,6 +134,7 @@ public class MealWithExceed extends BaseTo {
         return "MealWithExceed{" +
                 "dateTime=" + dateTime +
                 ", description='" + description + '\'' +
+                ", calories='" + calories + '\'' +
                 ", type1='" + type1 + '\'' +
                 ", type2='" + type2 + '\'' +
                 ", cod=" + cod +

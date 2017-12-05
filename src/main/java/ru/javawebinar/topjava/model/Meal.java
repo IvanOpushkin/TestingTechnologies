@@ -33,25 +33,26 @@ public class Meal extends AbstractBaseEntity {
     public static final String GET_BETWEEN = "Meal.getBetween";
 
     @Column(name = "date_time", nullable = false)
-    @NotNull
+    //@NotNull
     @DateTimeFormat(pattern = DateTimeUtil.DATE_TIME_PATTERN)
     private LocalDateTime dateTime;
 
     @Column(name = "description", nullable = false)
-    @NotBlank
-    @Size(min = 2, max = 120)
+    //@Size(min = 2, max = 120)
     //@SafeHtml чекс текст на зловредные скрипты, чтобы их не было. Как в гугл поисковике
     @SafeHtml(groups = {View.ValidatedRestUI.class})
     private String description;
 
+    @Column(name = "calories", nullable = false)
+    @SafeHtml(groups = {View.ValidatedRestUI.class})
+    private String calories;
+
 
     @Column(name = "type1", nullable = false)
-    @NotBlank
     @SafeHtml(groups = {View.ValidatedRestUI.class})
     private String type1;
 
     @Column(name = "type2", nullable = false)
-    @NotBlank
     @SafeHtml(groups = {View.ValidatedRestUI.class})
     private String type2;
 
@@ -59,11 +60,11 @@ public class Meal extends AbstractBaseEntity {
 
     @Column(name = "cod", nullable = false)
     //@Range(min = 10, max = 5000)
-    @NotNull
+    //@NotNull
     private Integer cod;
 
     @Column(name = "naimenovanie", nullable = false)
-    @NotBlank
+    //@NotBlank - пустота в поле разрешить убрав
     @SafeHtml(groups = {View.ValidatedRestUI.class})
     private String naimenovanie;
 
@@ -74,14 +75,12 @@ public class Meal extends AbstractBaseEntity {
     //proizvoditel
     //1
     @Column(name = "proizvoditel", nullable = false)
-    @NotBlank
     @SafeHtml(groups = {View.ValidatedRestUI.class})
     private String proizvoditel;
 
     //edizmereniya
     //2
     @Column(name = "edizmereniya", nullable = false)
-    @NotBlank
     @SafeHtml(groups = {View.ValidatedRestUI.class})
     private String edizmereniya;
 
@@ -89,34 +88,31 @@ public class Meal extends AbstractBaseEntity {
     //3
     @Column(name = "kolvo", nullable = false)
     //@Range(min = 10, max = 5000)
-    @NotNull
+    //@NotNull
     private Integer kolvo;
 
     //cena
     //4
     @Column(name = "cena", nullable = false)
     //@Range(min = 10, max = 5000)
-    @NotNull
+    //@NotNull
     private Integer cena;
 
     //primechanie
     //5
     @Column(name = "primechanie", nullable = false)
-    @NotBlank
     @SafeHtml(groups = {View.ValidatedRestUI.class})
     private String primechanie;
 
     //articul
     //6
     @Column(name = "articul", nullable = false)
-    @NotBlank
     @SafeHtml(groups = {View.ValidatedRestUI.class})
     private String articul;
 
     //picture
     //7
     @Column(name = "picture", nullable = false)
-    @NotBlank
     @SafeHtml(groups = {View.ValidatedRestUI.class})
     private String picture;
 
@@ -127,19 +123,33 @@ public class Meal extends AbstractBaseEntity {
     @NotNull(groups = View.Persist.class)
     private User user;
 
+
+    //JSON игнорит формообразование базовое? Хранит у себя в памятке?
     public Meal() {
     }
 
-    public Meal(LocalDateTime dateTime, String description, int cod, String naimenovanie) {
-        this(null, dateTime, description, cod, naimenovanie);
+    public Meal(LocalDateTime dateTime, String description, String calories, String type1, String type2, int cod, String naimenovanie, String proizvoditel, String edizmereniya, Integer kolvo, Integer cena, String primechanie, String articul, String picture) {
+        this(null, dateTime, description, calories, type1, type2, cod, naimenovanie, proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture);
     }
 
-    public Meal(Integer id, LocalDateTime dateTime, String description, int cod, String naimenovanie) {
+    public Meal(Integer id, LocalDateTime dateTime, String description, String calories, String type1, String type2, int cod, String naimenovanie, String proizvoditel, String edizmereniya, Integer kolvo, Integer cena, String primechanie, String articul, String picture) {
         super(id);
         this.dateTime = dateTime;
         this.description = description;
+        this.calories = calories;
+        this.type1 = type1;
+        this.type2 = type2;
+        //naimenovanie, proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture
         this.cod = cod;
         this.naimenovanie = naimenovanie;
+        this.proizvoditel = proizvoditel;
+        this.edizmereniya = edizmereniya;
+        this.kolvo = kolvo;
+        this.cena = cena;
+        this.primechanie = primechanie;
+        this.articul = articul;
+        this.picture = picture;
+
     }
 
     public LocalDateTime getDateTime() {
@@ -190,7 +200,19 @@ public class Meal extends AbstractBaseEntity {
         this.naimenovanie = naimenovanie;
     }
 
-   //Новых 14
+
+
+
+    public String getCalories() {
+       return calories;
+    }
+
+    public void setCalories(String calories) {
+        this.calories = calories;
+    }
+
+
+    //Новых 14
 
 
     public String getProizvoditel() {
@@ -270,6 +292,7 @@ public class Meal extends AbstractBaseEntity {
         return "Meal{" +
                 "dateTime=" + dateTime +
                 ", description='" + description + '\'' +
+              ", calories='" + calories + '\'' +
                 ", type1='" + type1 + '\'' +
                 ", type2='" + type2 + '\'' +
                 ", cod=" + cod +

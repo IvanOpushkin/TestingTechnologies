@@ -86,9 +86,26 @@ public abstract class AbstractMealServiceTest extends AbstractServiceTest {
     @Test
     public void testValidation() throws Exception {
         Assume.assumeTrue(isJpaBased());
-        validateRootCause(() -> service.create(new Meal(null, of(2015, Month.JUNE, 1, 18, 0), "  ", 300, "Завтрак2"), USER_ID), ConstraintViolationException.class);
-        validateRootCause(() -> service.create(new Meal(null, null, "Description", 300, "Завтрак2"), USER_ID), ConstraintViolationException.class);
-        validateRootCause(() -> service.create(new Meal(null, of(2015, Month.JUNE, 1, 18, 0), "Description", 9, "Завтрак2"), USER_ID), ConstraintViolationException.class);
-        validateRootCause(() -> service.create(new Meal(null, of(2015, Month.JUNE, 1, 18, 0), "Description", 5001, "Завтрак2"), USER_ID), ConstraintViolationException.class);
+        validateRootCause(() -> service.create(new Meal(null, of(2015, Month.JUNE, 1, 18, 0), "Завтрак","Завтрак", "Завтрак2", "Завтрак2",500, "Завтрак2", "ok", "nook", 444, 555, "no", "yes", "no"), USER_ID), ConstraintViolationException.class);
+        validateRootCause(() -> service.create(new Meal(null, of(2015, Month.MAY, 30, 10, 0), "Завтрак","Завтрак", "Завтрак2", "Завтрак2",500, "Завтрак2", "ok", "nook", 444, 555, "no", "yes", "no"), USER_ID), ConstraintViolationException.class);
+        validateRootCause(() -> service.create(new Meal(null, of(2015, Month.JUNE, 1, 18, 0), "Завтрак","Завтрак", "Завтрак2", "Завтрак2",500, "Завтрак2", "ok", "nook", 444, 555, "no", "yes", "no"), USER_ID), ConstraintViolationException.class);
+        validateRootCause(() -> service.create(new Meal(null, of(2015, Month.JUNE, 1, 18, 0), "Завтрак","Завтрак", "Завтрак2", "Завтрак2",500, "Завтрак2", "ok", "nook", 444, 555, "no", "yes", "no"), USER_ID), ConstraintViolationException.class);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

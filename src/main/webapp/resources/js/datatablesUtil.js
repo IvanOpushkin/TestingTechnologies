@@ -24,7 +24,7 @@ function extendsOpts(opts) {
                 "url": ajaxUrl,
                 "dataSrc": ""
             },
-            "pageLength": 3,
+            "pageLength": 10,
 
             "paging": true,
             "info": true,

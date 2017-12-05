@@ -1,6 +1,8 @@
 var ajaxUrl = "ajax/profile/meals/";
 var datatableApi;
 
+
+
 function updateTable() {
     $.ajax({
         type: "POST",
@@ -37,18 +39,9 @@ $(function () {
 
                "render": function(data, type, row)
                 {
-                   return '<img src="/PhotoCablesMendeleev/751osnova.jpg" style="height:240px;width:180px;"/>';
+                   return '<img src="https://s3.eu-central-1.amazonaws.com/photosnova/PhotoCablesMendeleev/'+data+'.jpg" style="height:240px;width:180px;"/>';
                 }
-            },
-            {
-                //По аналогии добавим сначала пиктюр следующей
-                "data": "dateTime"
-                //type, row может убрать тк юз даты идёт
-            },
-            {
-                "data": "description"
-            },
-            {
+            }, {
                 "data": "type1"
             },
             {

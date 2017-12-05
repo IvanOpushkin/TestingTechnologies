@@ -45,6 +45,7 @@ public class JdbcMealRepositoryImpl implements MealRepository {
         MapSqlParameterSource map = new MapSqlParameterSource()
                 .addValue("id", meal.getId())
                 .addValue("description", meal.getDescription())
+                .addValue("calories", meal.getCalories())
                 .addValue("type1", meal.getType1())
                 .addValue("type2", meal.getType2())
                 .addValue("cod", meal.getCod())
@@ -69,7 +70,7 @@ public class JdbcMealRepositoryImpl implements MealRepository {
 
             if (namedParameterJdbcTemplate.update("" +
                             "UPDATE meals " +
-                            "   SET description=:description, type1=:type1, type2=:type2, cod=:cod, date_time=:date_time, naimenovanie=:naimenovanie," +
+                            "   SET description=:description, calories=:calories, type1=:type1, type2=:type2, cod=:cod, date_time=:date_time, naimenovanie=:naimenovanie," +
                             " proizvoditel=:proizvoditel, edizmereniya=:edizmereniya, kolvo=:kolvo, cena=:cena, primechanie=:primechanie, articul=:articul , picture=:picture " +
                             " WHERE id=:id AND user_id=:user_id"
                     , map) == 0) {

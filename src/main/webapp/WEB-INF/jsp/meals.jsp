@@ -13,6 +13,7 @@
     <div class="container">
         <h3><spring:message code="meal.title"/></h3>
 
+        <%--
         <div class="row">
             <div class="col-sm-7">
                 <div class="panel panel-default">
@@ -61,6 +62,8 @@
                 </div>
             </div>
         </div>
+        --%>
+
         <a class="btn btn-primary" onclick="add()">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             <spring:message code="common.add"/>
@@ -68,22 +71,18 @@
         <table class="table table-striped display" id="datatable">
             <thead>
             <tr>
-                <th><spring:message code="meal.dateTime"/></th>
-                <th><spring:message code="meal.description"/></th>
 
+                <th>Картинка</th>
                 <th>Тип1</th>
                 <th>Тип2</th>
-                <th>Код(not null поставлен)</th>
+                <th>Код</th>
                 <th>Наименование</th>
-
-                <!-- proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture -->
                 <th>Производитель</th>
                 <th>Ед.изм</th>
                 <th>Кол-во</th>
                 <th>Цена</th>
                 <th>Примечание</th>
                 <th>Артикул</th>
-                <th>Картинка</th>
 
                 <th></th>
                 <th></th>
@@ -104,6 +103,8 @@
                 <form class="form-horizontal" id="detailsForm">
                     <input type="hidden" id="id" name="id">
 
+
+                    <%--
                     <div class="form-group">
                         <label for="dateTime" class="control-label col-xs-3"><spring:message
                                 code="meal.dateTime"/></label>
@@ -113,6 +114,7 @@
                                    placeholder="<spring:message code="meal.dateTime"/>">
                         </div>
                     </div>
+
                     <div class="form-group">
                         <label for="description" class="control-label col-xs-3"><spring:message
                                 code="meal.description"/></label>
@@ -122,6 +124,19 @@
                                    placeholder="<spring:message code="meal.description"/>">
                         </div>
                     </div>
+
+
+
+                    <div class="form-group">
+                        <label for="calories" class="control-label col-xs-3">calories</label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="calories" name="calories"
+                                   placeholder="calories">
+                        </div>
+                    </div>
+
+                    --%>
 
                     <div class="form-group">
                         <label for="type1" class="control-label col-xs-3">Тип1</label>
