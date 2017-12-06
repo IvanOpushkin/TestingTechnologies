@@ -6,9 +6,10 @@
 <html>
 <jsp:include page="fragments/headTag.jsp"/>
 <body>
+
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
-        <div class="navbar-header navbar-brand"><spring:message code="app.title"/></div>
+        <div class="navbar-header navbar-brand">База Ланит</div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -24,7 +25,11 @@
                         </button>
                     </form:form>
                 </li>
+
+                <!-- Интересная микро минюшка языка -->
+                <%--
                 <jsp:include page="fragments/lang.jsp"/>
+                --%>
             </ul>
         </div>
     </div>
@@ -43,6 +48,7 @@
             </div>
         </c:if>
         <br/>
+        <%--
         <p>
             <a class="btn btn-lg btn-success" href="register"><spring:message code="app.register"/> &raquo;</a>
             <button type="submit" class="btn btn-lg btn-primary" onclick="setCredentials('user@yandex.ru', 'password')">
@@ -52,7 +58,10 @@
                 <spring:message code="app.enter"/> Admin
             </button>
         </p>
+        --%>
+        <%--
         <br/>
+
         <p>Стек технологий: <a href="http://projects.spring.io/spring-security/">Spring Security</a>,
             <a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html">Spring MVC</a>,
             <a href="http://projects.spring.io/spring-data-jpa/">Spring Data JPA</a>,
@@ -88,7 +97,12 @@
         Весь REST интерфейс покрывается JUnit тестами, используя Spring MVC Test и Spring Security Test.
     </div>
 </div>
+
+
 <jsp:include page="fragments/footer.jsp"/>
+ --%>
+         <!--   <img src="lanit-crop.jpg" alt="Lanit"> -->
+
 <script type="text/javascript">
     <c:if test="${not empty param.username}">
     setCredentials("${param.username}", "");
