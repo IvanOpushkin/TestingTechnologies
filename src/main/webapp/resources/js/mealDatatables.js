@@ -41,7 +41,11 @@ $(function () {
                 {
                    return '<img src="https://s3.eu-central-1.amazonaws.com/photosnova/PhotoCablesMendeleev/'+data+'.jpg" style="height:240px;width:180px;"/>';
                 }
-            }, {
+            },
+            {
+                "data": "articul"
+            },
+            {
                 "data": "type1"
             },
             {
@@ -69,9 +73,6 @@ $(function () {
             },
             {
                 "data": "primechanie"
-            },
-            {
-                "data": "articul"
             },
             {
                 "render": renderEditBtn,

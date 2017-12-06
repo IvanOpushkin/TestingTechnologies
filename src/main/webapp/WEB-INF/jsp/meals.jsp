@@ -3,6 +3,28 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fn" uri="http://topjava.javawebinar.ru/functions" %>
 <html>
+<head>
+    <style>
+
+        table, td {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: -150px;
+        }
+
+        th, td {
+            padding: 15px;
+        }
+
+
+
+    </style>
+</head>
 <jsp:include page="fragments/headTag.jsp"/>
 <body>
 <script type="text/javascript" src="resources/js/datatablesUtil.js" defer></script>
@@ -68,11 +90,12 @@
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             <spring:message code="common.add"/>
         </a>
-        <table class="table table-striped display" id="datatable">
+        <table id="datatable">
             <thead>
             <tr>
 
                 <th>Картинка</th>
+                <th>Артикул</th>
                 <th>Тип1</th>
                 <th>Тип2</th>
                 <th>Код</th>
@@ -82,7 +105,7 @@
                 <th>Кол-во</th>
                 <th>Цена</th>
                 <th>Примечание</th>
-                <th>Артикул</th>
+
 
                 <th></th>
                 <th></th>

@@ -65,7 +65,7 @@ public class MealWithExceed extends BaseTo {
 
 
 
-        this.exceed = exceed;
+        this.exceed = true;
     }
 
     public LocalDateTime getDateTime() {
