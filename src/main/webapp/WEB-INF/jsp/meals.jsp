@@ -14,7 +14,7 @@
         table {
             border-collapse: collapse;
             width: 100%;
-            margin-left: -150px;
+            margin-left: -50px;
         }
 
         th, td {
