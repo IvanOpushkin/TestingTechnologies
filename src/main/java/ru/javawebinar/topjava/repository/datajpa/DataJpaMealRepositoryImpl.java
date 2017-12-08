@@ -6,8 +6,13 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.repository.MealRepository;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
+
+import static java.time.LocalDateTime.of;
 
 @Repository
 public class DataJpaMealRepositoryImpl implements MealRepository {
@@ -25,6 +30,19 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
             return null;
         }
         meal.setUser(crudUserRepository.getOne(userId));
+
+        if (meal.getDateTime() == null)
+        meal.setDateTime(LocalDateTime.now());
+        if (meal.getCod() == null)
+        meal.setCod(0);
+        if (meal.getCena() == null)
+        meal.setCena(0);
+        if (meal.getKolvo() == null)
+        meal.setKolvo(0);
+        if (meal.getCalories() == null)
+        meal.setCalories("o");
+        if (meal.getDescription() == null)
+        meal.setDescription("o");
         return crudMealRepository.save(meal);
     }
 

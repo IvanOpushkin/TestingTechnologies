@@ -183,9 +183,16 @@
                         <label for="cod" class="control-label col-xs-3">Код</label>
 
                         <div class="col-xs-9">
-                            <input type="number" class="form-control" id="cod" name="cod" placeholder="1000">
+                            <input type="number" class="form-control" id="cod" name="cod">
                         </div>
+
+                        <script type="text/javascript">
+                            document.getElementById('cod').value = 0
+                        </script>
+
                     </div>
+
+
                     <!-- Наименование в добавление -->
                     <div class="form-group">
                         <label for="naimenovanie" class="control-label col-xs-3">Наименование</label>
@@ -245,14 +252,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="picture" class="control-label col-xs-3">Картинко-имя(mb сделать картинку справа)</label>
+                       <label for="picture" class="control-label col-xs-3">Картинко-имя(mb сделать картинку справа)</label>
 
-                        <div class="col-xs-9">
-                            <input type="text" class="form-control" id="picture" name="picture" placeholder="1000">
-                        </div>
-                    </div>
+                       <div class="col-xs-9">
+                           <input type="text" class="form-control" id="picture" name="picture" placeholder="1000">
+                       </div>
+                   </div>
 
-                    <!-- -->
+
 
                     <div class="form-group">
                         <div class="col-xs-offset-3 col-xs-9">

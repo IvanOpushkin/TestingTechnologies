@@ -46,11 +46,11 @@ public class MealWithExceed extends BaseTo {
                           @JsonProperty("picture") String picture,
                           @JsonProperty("exceed") boolean exceed) {
         super(id);
+
+        System.out.println(cod);
         this.dateTime = dateTime;
         this.description = description;
-
         this.calories = calories;
-
         this.type1 = type1;
         this.type2 = type2;
         this.cod = cod;

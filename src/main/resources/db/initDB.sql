@@ -29,14 +29,14 @@ CREATE TABLE user_roles
 CREATE TABLE meals (
   id          INTEGER PRIMARY KEY DEFAULT nextval('global_seq'),
   user_id     INTEGER   NOT NULL,
-  date_time   TIMESTAMP DEFAULT NOW(),
+  date_time   TIMESTAMP DEFAULT now(),
   description TEXT      DEFAULT 'o',
 
   -- ласт строка
-  calories    TEXT      DEFAULT 'o',
+  calories    TEXT  DEFAULT 'o',
 
 -- меняем калорис их нет в базовой версии
-  cod         INT  DEFAULT 0,
+  cod         INTEGER DEFAULT 0,
   naimenovanie   TEXT   DEFAULT 'o',
 
   -- calories    INT       NOT NULL,

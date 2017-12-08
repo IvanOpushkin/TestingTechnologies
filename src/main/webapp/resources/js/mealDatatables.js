@@ -3,6 +3,32 @@ var datatableApi;
 
 
 
+function format ( d ) {
+// `d` is the original data object for the row
+    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;padding-right:50px;">'+
+        '<tr>'+
+        '<td>'+d.PartNumber+'</td>'+
+        '<td><a href="' + d.PartUrl + '" target="_blank">View Product Page</td>'+
+        '<td rowspan="4"><img src="' + d.Thumb + '"/></td>'+
+        '</tr>'+
+        '<tr>'+
+        '<td>Category:</td>'+
+        '<td>'+d.LongDesc+'</td>'+
+        '</tr>'+
+        '<tr>'+
+        '<td>Location:</td>'+
+        '<td>'+d.Location+'</td>'+
+        '</tr>'+
+        '<tr>'+
+        '<td>Notes:</td>'+
+        '<td>'+d.Notes+'</td>'+
+        '</tr>'+
+        '</table>';
+}
+
+
+
+
 function updateTable() {
     $.ajax({
         type: "POST",

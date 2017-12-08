@@ -1,5 +1,7 @@
 package ru.javawebinar.topjava.model;
 
+import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
+import javafx.beans.DefaultProperty;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.validator.constraints.Range;
@@ -15,6 +17,9 @@ import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Month;
+
+import static java.time.LocalDateTime.of;
 
 @SuppressWarnings("JpaQlInspection")
 @NamedQueries({
@@ -33,7 +38,7 @@ public class Meal extends AbstractBaseEntity {
     public static final String GET_BETWEEN = "Meal.getBetween";
 
     @Column(name = "date_time", nullable = false)
-    //@NotNull
+    //@SafeHtml(groups = {View.ValidatedRestUI.class})
     @DateTimeFormat(pattern = DateTimeUtil.DATE_TIME_PATTERN)
     private LocalDateTime dateTime;
 
@@ -58,9 +63,10 @@ public class Meal extends AbstractBaseEntity {
 
 
 
-    @Column(name = "cod", nullable = false)
+    @Column(name = "cod", nullable = false, columnDefinition = "Integer default 0")
     //@Range(min = 10, max = 5000)
-    //@NotNull
+    //@NotBlank
+    //@SafeHtml(groups = {View.ValidatedRestUI.class})
     private Integer cod;
 
     @Column(name = "naimenovanie", nullable = false)
@@ -89,6 +95,7 @@ public class Meal extends AbstractBaseEntity {
     @Column(name = "kolvo", nullable = false)
     //@Range(min = 10, max = 5000)
     //@NotNull
+    //@SafeHtml(groups = {View.ValidatedRestUI.class})
     private Integer kolvo;
 
     //cena
@@ -96,6 +103,7 @@ public class Meal extends AbstractBaseEntity {
     @Column(name = "cena", nullable = false)
     //@Range(min = 10, max = 5000)
     //@NotNull
+    //@SafeHtml(groups = {View.ValidatedRestUI.class})
     private Integer cena;
 
     //primechanie
@@ -129,6 +137,7 @@ public class Meal extends AbstractBaseEntity {
     }
 
     public Meal(LocalDateTime dateTime, String description, String calories, String type1, String type2, int cod, String naimenovanie, String proizvoditel, String edizmereniya, Integer kolvo, Integer cena, String primechanie, String articul, String picture) {
+
         this(null, dateTime, description, calories, type1, type2, cod, naimenovanie, proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture);
     }
 
