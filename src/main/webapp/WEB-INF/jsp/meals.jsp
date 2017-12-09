@@ -35,12 +35,14 @@
     <div class="container">
         <h3><spring:message code="meal.title"/></h3>
 
-        <%--
+
         <div class="row">
-            <div class="col-sm-7">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <form class="form-horizontal" id="filter">
+             <div class="col-sm-7"> <!-- Ответственный За ширину (mb) -->
+               <!-- <div class="panel panel-default"> --> <!--Удаляет панельку белой полоски под заполнение-->
+                   <!-- <div class="panel-body"> --> <!--Белая полоска под часть с заполнителями -->
+
+                        <form class="form-horizontal" id="filterSetevoe">
+                            <%--
                             <div class="form-group">
                                 <label class="control-label col-sm-3" for="startDate"><spring:message
                                         code="meal.startDate"/>:</label>
@@ -71,20 +73,67 @@
                                     <input class="form-control" name="endTime" id="endTime">
                                 </div>
                             </div>
+                            --%>
                         </form>
-                    </div>
+                   <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
                     <div class="panel-footer text-right">
-                        <a class="btn btn-danger" type="button" onclick="clearFilter()">
+                        <a class="btn btn-danger" type="button" onclick="clearFilterSetevoe()">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </a>
-                        <a class="btn btn-primary" type="button" onclick="updateTable()">
+                        <a class="btn btn-primary" type="button" onclick="updateTableSetevoe()">
                             <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
                         </a>
+
                     </div>
-                </div>
-            </div>
+
+                 <form class="form-horizontal" id="filterSantex">
+                     <%--
+                     <div class="form-group">
+                         <label class="control-label col-sm-3" for="startDate"><spring:message
+                                 code="meal.startDate"/>:</label>
+
+                         <div class="col-sm-3">
+                             <input class="form-control" name="startDate" id="startDate">
+                         </div>
+
+                         <label class="control-label col-sm-4" for="startTime"><spring:message
+                                 code="meal.startTime"/>:</label>
+
+                         <div class="col-sm-2">
+                             <input class="form-control" name="startTime" id="startTime">
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <label class="control-label col-sm-3" for="endDate"><spring:message
+                                 code="meal.endDate"/>:</label>
+
+                         <div class="col-sm-3">
+                             <input class="form-control" name="endDate" id="endDate">
+                         </div>
+
+                         <label class="control-label col-sm-4" for="endTime"><spring:message
+                                 code="meal.endTime"/>:</label>
+
+                         <div class="col-sm-2">
+                             <input class="form-control" name="endTime" id="endTime">
+                         </div>
+                     </div>
+                     --%>
+                 </form>
+                 <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
+                 <div class="panel-footer text-right">
+                     <a class="btn btn-danger" type="button" onclick="clearFilterSantex()">
+                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                     </a>
+                     <a class="btn btn-primary" type="button" onclick="updateTableSantex()">
+                         <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+                     </a>
+
+                 </div>
+               <!-- </div> --><!--Удаляет панельку белой полоски под заполнение-->
+           </div> <!-- Ответственный За ширину -->
         </div>
-        --%>
+
 
         <a class="btn btn-primary" onclick="add()">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>

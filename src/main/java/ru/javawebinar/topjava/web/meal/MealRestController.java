@@ -54,6 +54,15 @@ public class MealRestController extends AbstractMealController {
         return ResponseEntity.created(uriOfNewResource).body(created);
     }
 
+
+    @Override
+    @GetMapping(value = "/setevoe")
+    public List<MealWithExceed> getSetevoe() {
+        System.out.println("ok");
+        return super.getSetevoe();
+    }
+
+
     @Override
     @GetMapping(value = "/filter")
     public List<MealWithExceed> getBetween(

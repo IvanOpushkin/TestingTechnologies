@@ -12,6 +12,7 @@ import ru.javawebinar.topjava.util.MealsUtil;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import static ru.javawebinar.topjava.util.ValidationUtil.assureIdConsistent;
@@ -38,6 +39,9 @@ public abstract class AbstractMealController {
     public List<MealWithExceed> getAll() {
         int userId = AuthorizedUser.id();
         log.info("getAll for User {}", userId);
+
+        System.out.println("yeeeeeeeeee");
+
         return MealsUtil.getWithExceeded(service.getAll(userId), AuthorizedUser.getCaloriesPerDay());
     }
 
@@ -54,6 +58,45 @@ public abstract class AbstractMealController {
         log.info("update {} for User {}", meal, userId);
         service.update(meal, userId);
     }
+
+    public List<MealWithExceed> getSetevoe() {
+        int userId = AuthorizedUser.id();
+        log.info("getSetevoe for User {}", userId);
+        List<MealWithExceed> meall = MealsUtil.getWithExceeded(service.getAll(userId), AuthorizedUser.getCaloriesPerDay());
+        List<MealWithExceed> meallReall = new ArrayList<MealWithExceed>();
+
+        for (MealWithExceed mwe:meall)
+        {
+            if (mwe.getType1().contains("Сетевое"))
+            {
+                meallReall.add(mwe);
+            }
+        }
+
+        System.out.println("hello, adding done, objects added = " + meallReall.size());
+
+        return meallReall;
+    }
+
+    public List<MealWithExceed> getSantex() {
+        int userId = AuthorizedUser.id();
+        log.info("getSetevoe for User {}", userId);
+        List<MealWithExceed> meall = MealsUtil.getWithExceeded(service.getAll(userId), AuthorizedUser.getCaloriesPerDay());
+        List<MealWithExceed> meallReall = new ArrayList<MealWithExceed>();
+
+        for (MealWithExceed mwe:meall)
+        {
+            if (mwe.getType1().contains("Сантех"))
+            {
+                meallReall.add(mwe);
+            }
+        }
+
+        System.out.println("hello, adding done, objects added = " + meallReall.size());
+
+        return meallReall;
+    }
+
 
     /**
      * <ol>Filter separately

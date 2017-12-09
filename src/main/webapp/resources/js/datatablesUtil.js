@@ -78,6 +78,7 @@ function save() {
             updateTable();
             successNoty("common.saved");
         }
+
     });
 }
 
@@ -123,3 +124,15 @@ function renderDeleteBtn(data, type, row) {
             "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a>";
     }
 }
+
+$(document).on('submit', '.myForm', function(e) {
+    $.ajax({
+        url: $(this).attr('action'),
+        type: $(this).attr('method'),
+        data: $(this).serialize(),
+        success: function(html) {
+            alert('ok');
+        }
+    });
+    e.preventDefault();
+});

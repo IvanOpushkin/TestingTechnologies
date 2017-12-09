@@ -29,17 +29,34 @@ function format ( d ) {
 
 
 
-function updateTable() {
+//1.Сетевое
+function updateTableSetevoe() {
     $.ajax({
         type: "POST",
-        url: ajaxUrl + "filter",
-        data: $("#filter").serialize(),
+        url: ajaxUrl + "filterSetevoe",
+        data: $("#filterSetevoe").serialize(),
         success: updateTableByData
     });
 }
 
-function clearFilter() {
-    $("#filter")[0].reset();
+
+function clearFilterSetevoe() {
+    $("#filterSetevoe")[0].reset();
+    $.get(ajaxUrl, updateTableByData);
+}
+
+//2.Сантекс
+function updateTableSantex() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterSantex",
+        data: $("#filterSantex").serialize(),
+        success: updateTableByData
+    });
+}
+
+function clearFilterSantex() {
+    $("#filterSantex")[0].reset();
     $.get(ajaxUrl, updateTableByData);
 }
 
@@ -63,9 +80,11 @@ $(function () {
             {
                 "data": "picture",
 
+
+
                "render": function(data, type, row)
                 {
-                   return '<img src="https://s3.eu-central-1.amazonaws.com/photosnova/PhotoCablesMendeleev/'+data+'.jpg" style="height:240px;width:180px;"/>';
+                   return '<a href="https://s3.eu-central-1.amazonaws.com/photosnova/PhotoCablesMendeleev/'+data+'.jpg"><img src="https://s3.eu-central-1.amazonaws.com/photosnova/PhotoCablesMendeleev/'+data+'.jpg" style="height:240px;width:180px;"/></a>';
                 }
             },
             {

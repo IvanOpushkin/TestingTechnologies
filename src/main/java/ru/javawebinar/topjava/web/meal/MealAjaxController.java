@@ -15,11 +15,17 @@ import java.util.List;
 @RequestMapping(value = "/ajax/profile/meals")
 public class MealAjaxController extends AbstractMealController {
 
+
+
     @Override
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getAll() {
         return super.getAll();
     }
+
+
+
+
 
     @Override
     @GetMapping(value = "/{id}")
@@ -42,13 +48,36 @@ public class MealAjaxController extends AbstractMealController {
         }
     }
 
+    @PostMapping(value = "/filterSetevoe", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getSetevoe()
+    {
+        return super.getSetevoe();
+    }
+
+    @PostMapping(value = "/filterSantex", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getSantex()
+    {
+        return super.getSantex();
+    }
+/*
+    @Override
+    @PostMapping(value = "/setevoe", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getSetevoe() {
+        System.out.println("ok");
+        return super.getSetevoe();
+    }
+
+
     @Override
     @PostMapping(value = "/filter", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getBetween(
             @RequestParam(value = "startDate", required = false) LocalDate startDate,
             @RequestParam(value = "startTime", required = false) LocalTime startTime,
             @RequestParam(value = "endDate", required = false) LocalDate endDate,
-            @RequestParam(value = "endTime", required = false) LocalTime endTime) {
-        return super.getBetween(startDate, startTime, endDate, endTime);
+            @RequestParam(value = "endTime", required = false) LocalTime endTime)
+    {
+        return super.getSetevoe();
     }
+
+    */
 }
