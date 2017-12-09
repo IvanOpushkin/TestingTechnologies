@@ -60,6 +60,97 @@ function clearFilterSantex() {
     $.get(ajaxUrl, updateTableByData);
 }
 
+//3.Защитный лоток
+function updateTableZashitLotok() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterZashitLotok",
+        data: $("#filterZashitLotok").serialize(),
+        success: updateTableByData
+    });
+}
+
+//4.Электрощитовое
+function updateTableElectroshit() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterElectroShit",
+        data: $("#filterElectroShit").serialize(),
+        success: updateTableByData
+    });
+}
+
+//5.Световое
+function updateTableSvetovoe() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterSvetovoe",
+        data: $("#filterSvetovoe").serialize(),
+        success: updateTableByData
+    });
+}
+
+//5.Коммуникационные шкафы
+function updateTableCommun() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterCommun",
+        data: $("#filterCommun").serialize(),
+        success: updateTableByData
+    });
+}
+
+//6.Компьютерное оборудование
+function updateTableComp() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterComp",
+        data: $("#filterComp").serialize(),
+        success: updateTableByData
+    });
+}
+
+//7.Телекомуникационные
+function updateTableTelecom() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterTelecom",
+        data: $("#filterTelecom").serialize(),
+        success: updateTableByData
+    });
+}
+
+//8.Офисное оборудование
+function updateTableOffice() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterOffice",
+        data: $("#filterOffice").serialize(),
+        success: updateTableByData
+    });
+}
+
+//9.Пожарно-охранное оборудование
+function updateTablePozhar() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterPozhar",
+        data: $("#filterPozhar").serialize(),
+        success: updateTableByData
+    });
+}
+
+
+function clearFilterZashitLotok() {
+    $("#filterZashitLotok")[0].reset();
+    $.get(ajaxUrl, updateTableByData);
+}
+
+function clearFilterElectroshit() {
+    $("#filterElectroShit")[0].reset();
+    $.get(ajaxUrl, updateTableByData);
+}
+
 // http://api.jquery.com/jQuery.ajax/#using-converters
 $.ajaxSetup({
     converters: {

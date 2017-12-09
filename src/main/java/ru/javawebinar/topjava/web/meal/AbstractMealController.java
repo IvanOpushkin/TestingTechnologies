@@ -59,6 +59,47 @@ public abstract class AbstractMealController {
         service.update(meal, userId);
     }
 
+    public List<MealWithExceed> getType(String type) {
+        int userId = AuthorizedUser.id();
+        log.info("getType"+type+"for User {}", userId);
+        List<MealWithExceed> meall = MealsUtil.getWithExceeded(service.getAll(userId), AuthorizedUser.getCaloriesPerDay());
+        List<MealWithExceed> meallReall = new ArrayList<MealWithExceed>();
+
+        for (MealWithExceed mwe:meall)
+        {
+            if (mwe.getType1().contains(type))
+            {
+                meallReall.add(mwe);
+            }
+        }
+        return meallReall;
+    }
+
+
+
+
+    /**
+     * <ol>Filter separately
+     *   <li>by date</li>
+     *   <li>by time for every date</li>
+     * </ol>
+     */
+    public List<MealWithExceed> getBetween(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime) {
+        int userId = AuthorizedUser.id();
+        log.info("getBetween dates({} - {}) time({} - {}) for User {}", startDate, endDate, startTime, endTime, userId);
+
+        return MealsUtil.getFilteredWithExceeded(
+                service.getBetweenDates(
+                        startDate != null ? startDate : DateTimeUtil.MIN_DATE,
+                        endDate != null ? endDate : DateTimeUtil.MAX_DATE, userId),
+                startTime != null ? startTime : LocalTime.MIN,
+                endTime != null ? endTime : LocalTime.MAX,
+                AuthorizedUser.getCaloriesPerDay()
+        );
+    }
+}
+
+/*
     public List<MealWithExceed> getSetevoe() {
         int userId = AuthorizedUser.id();
         log.info("getSetevoe for User {}", userId);
@@ -96,25 +137,4 @@ public abstract class AbstractMealController {
 
         return meallReall;
     }
-
-
-    /**
-     * <ol>Filter separately
-     *   <li>by date</li>
-     *   <li>by time for every date</li>
-     * </ol>
-     */
-    public List<MealWithExceed> getBetween(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime) {
-        int userId = AuthorizedUser.id();
-        log.info("getBetween dates({} - {}) time({} - {}) for User {}", startDate, endDate, startTime, endTime, userId);
-
-        return MealsUtil.getFilteredWithExceeded(
-                service.getBetweenDates(
-                        startDate != null ? startDate : DateTimeUtil.MIN_DATE,
-                        endDate != null ? endDate : DateTimeUtil.MAX_DATE, userId),
-                startTime != null ? startTime : LocalTime.MIN,
-                endTime != null ? endTime : LocalTime.MAX,
-                AuthorizedUser.getCaloriesPerDay()
-        );
-    }
-}
+    */

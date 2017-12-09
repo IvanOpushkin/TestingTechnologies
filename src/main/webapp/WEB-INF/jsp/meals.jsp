@@ -22,7 +22,6 @@
         }
 
 
-
     </style>
 </head>
 <jsp:include page="fragments/headTag.jsp"/>
@@ -31,107 +30,255 @@
 <script type="text/javascript" src="resources/js/mealDatatables.js" defer></script>
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
+
+</br>
+</br>
+</br>
+
 <div class="jumbotron">
     <div class="container">
-        <h3><spring:message code="meal.title"/></h3>
+        <div>
+            <div> <!-- Ответственный За ширину (mb) -->
+                <!-- <div class="panel panel-default"> --> <!--Удаляет панельку белой полоски под заполнение-->
+                <!-- <div class="panel-body"> --> <!--Белая полоска под часть с заполнителями -->
+                <table>
+                    <tr>
 
 
-        <div class="row">
-             <div class="col-sm-7"> <!-- Ответственный За ширину (mb) -->
-               <!-- <div class="panel panel-default"> --> <!--Удаляет панельку белой полоски под заполнение-->
-                   <!-- <div class="panel-body"> --> <!--Белая полоска под часть с заполнителями -->
+                        <!--САНТЕХ (без ловер кэйса)-->
+                        <!--САНТЕХ  (без ловер кэйса)-->
+                        <!--САНТЕХ  (без ловер кэйса)-->
 
-                        <form class="form-horizontal" id="filterSetevoe">
-                            <%--
-                            <div class="form-group">
-                                <label class="control-label col-sm-3" for="startDate"><spring:message
-                                        code="meal.startDate"/>:</label>
+                        <td>
+                            <form id="filterSantex">
+                            </form>
 
-                                <div class="col-sm-3">
-                                    <input class="form-control" name="startDate" id="startDate">
-                                </div>
+                            <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
 
-                                <label class="control-label col-sm-4" for="startTime"><spring:message
-                                        code="meal.startTime"/>:</label>
+                            <div>
+                                <!--
+                             <a class="btn btn-danger" type="button" onclick="clearFilterSantex()">
+                                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                             </a>
+                             -->
 
-                                <div class="col-sm-2">
-                                    <input class="form-control" name="startTime" id="startTime">
-                                </div>
+
+                                <a class="btn btn-default" type="button" onclick="updateTableSantex()">
+                                    Сантехническое оборудование <span class="glyphicon glyphicon-filter"
+                                                                      aria-hidden="true"></span>
+                                </a>
+
                             </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-3" for="endDate"><spring:message
-                                        code="meal.endDate"/>:</label>
+                        </td>
+                        <!-- (К)САНТЕХ (без ловер кэйса)-->
+                        <!--(К)САНТЕХ  (без ловер кэйса)-->
+                        <!--(К)САНТЕХ  (без ловер кэйса)-->
 
-                                <div class="col-sm-3">
-                                    <input class="form-control" name="endDate" id="endDate">
-                                </div>
+                        <!--Защитный лоток (без ловер кэйса)-->
+                        <!--Защитный лоток  (без ловер кэйса)-->
+                        <!--Защитный лоток  (без ловер кэйса)-->
+                        <td>
+                            <form id="filterZashitLotok">
+                            </form>
+                            <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
+                            <div>
+                                <!--
+                                 <a class="btn btn-danger" type="button" onclick="clearFilterSantex()">
+                                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                 </a>
+                                 -->
 
-                                <label class="control-label col-sm-4" for="endTime"><spring:message
-                                        code="meal.endTime"/>:</label>
+                                <a class="btn btn-default" type="button" onclick="updateTableZashitLotok()">
+                                    Защитные лотки <span class="glyphicon glyphicon-filter"
+                                                         aria-hidden="true"></span>
+                                </a>
 
-                                <div class="col-sm-2">
-                                    <input class="form-control" name="endTime" id="endTime">
-                                </div>
                             </div>
-                            --%>
-                        </form>
-                   <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
-                    <div class="panel-footer text-right">
-                        <a class="btn btn-danger" type="button" onclick="clearFilterSetevoe()">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                        </a>
-                        <a class="btn btn-primary" type="button" onclick="updateTableSetevoe()">
-                            <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
-                        </a>
+                        </td>
+                        <!--(К)Защитный лоток (без ловер кэйса)-->
+                        <!--(К)Защитный лоток  (без ловер кэйса)-->
+                        <!--(К)Защитный лоток  (без ловер кэйса)-->
 
-                    </div>
+                        <!--Электрощитовое оборудование (без ловер кэйса)-->
+                        <!--Электрощитовое оборудование  (без ловер кэйса)-->
+                        <!--Электрощитовое оборудование  (без ловер кэйса)-->
+                        <td>
+                            <form id="filterElectroShit">
+                            </form>
+                            <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
+                            <div>
 
-                 <form class="form-horizontal" id="filterSantex">
-                     <%--
-                     <div class="form-group">
-                         <label class="control-label col-sm-3" for="startDate"><spring:message
-                                 code="meal.startDate"/>:</label>
+                                <!--
+                                                          <a class="btn btn-danger" type="button" onclick="clearFilterElectroshit()">
+                                                              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                                          </a>
+                                    -->
 
-                         <div class="col-sm-3">
-                             <input class="form-control" name="startDate" id="startDate">
-                         </div>
 
-                         <label class="control-label col-sm-4" for="startTime"><spring:message
-                                 code="meal.startTime"/>:</label>
+                                <a class="btn btn-default" type="button" onclick="updateTableElectroshit()">
+                                    Электрощитовое оборудование <span class="glyphicon glyphicon-filter"
+                                                                      aria-hidden="true"></span>
+                                </a>
 
-                         <div class="col-sm-2">
-                             <input class="form-control" name="startTime" id="startTime">
-                         </div>
-                     </div>
-                     <div class="form-group">
-                         <label class="control-label col-sm-3" for="endDate"><spring:message
-                                 code="meal.endDate"/>:</label>
+                            </div>
+                        </td>
+                        <!--(К)Электрощитовое оборудование (без ловер кэйса)-->
+                        <!--(К)Электрощитовое оборудование  (без ловер кэйса)-->
+                        <!--(К)Электрощитовое оборудование  (без ловер кэйса)-->
 
-                         <div class="col-sm-3">
-                             <input class="form-control" name="endDate" id="endDate">
-                         </div>
+                        <!--СЕТЕВОЕ (без ловер кэйса)-->
+                        <!--СЕТЕВОЕ (без ловер кэйса)-->
+                        <!--СЕТЕВОЕ (без ловер кэйса)-->
+                        <td>
+                            <form id="filterSetevoe">
 
-                         <label class="control-label col-sm-4" for="endTime"><spring:message
-                                 code="meal.endTime"/>:</label>
+                            </form>
+                            <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
+                            <div>
 
-                         <div class="col-sm-2">
-                             <input class="form-control" name="endTime" id="endTime">
-                         </div>
-                     </div>
-                     --%>
-                 </form>
-                 <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
-                 <div class="panel-footer text-right">
-                     <a class="btn btn-danger" type="button" onclick="clearFilterSantex()">
-                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                     </a>
-                     <a class="btn btn-primary" type="button" onclick="updateTableSantex()">
-                         <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
-                     </a>
+                                <a class="btn btn-default" type="button" onclick="updateTableSetevoe()">
+                                    Сетевое Оборудование <span class="glyphicon glyphicon-filter"
+                                                               aria-hidden="true"></span>
+                                </a>
 
-                 </div>
-               <!-- </div> --><!--Удаляет панельку белой полоски под заполнение-->
-           </div> <!-- Ответственный За ширину -->
+                            </div>
+                        </td>
+                        <!--(K)СЕТЕВОЕ (без ловер кэйса)-->
+                        <!--(K)СЕТЕВОЕ (без ловер кэйса)-->
+                        <!--(K)СЕТЕВОЕ (без ловер кэйса)-->
+
+                        <!--Световое оборудование (без ловер кэйса)-->
+                        <!--Световое оборудование (без ловер кэйса)-->
+                        <!--Световое оборудование (без ловер кэйса)-->
+                        <td>
+                            <form id="filterSvetovoe">
+
+                            </form>
+                            <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
+                            <div>
+
+                                <a class="btn btn-default" type="button" onclick="updateTableSvetovoe()">
+                                    Световое Оборудование <span class="glyphicon glyphicon-filter"
+                                                                aria-hidden="true"></span>
+                                </a>
+
+                            </div>
+                        </td>
+                        <!--(К)Световое оборудование (без ловер кэйса)-->
+                        <!--(К)Световое оборудование (без ловер кэйса)-->
+                        <!--(К)Световое оборудование (без ловер кэйса)-->
+                    </tr>
+
+                    <tr>
+                        <!--Коммуникационные шкафы (без ловер кэйса)-->
+                        <!--Коммуникационные шкафы (без ловер кэйса)-->
+                        <!--Коммуникационные шкафы (без ловер кэйса)-->
+                        <td>
+                            <form id="filterCommun">
+
+                            </form>
+                            <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
+                            <div>
+
+                                <a class="btn btn-default" type="button" onclick="updateTableCommun()">
+                                    Коммуникационные шкафы <span class="glyphicon glyphicon-filter"
+                                                                 aria-hidden="true"></span>
+                                </a>
+
+                            </div>
+                        </td>
+                        <!--(К)Коммуникационные шкафы (без ловер кэйса)-->
+                        <!--(К)Коммуникационные шкафы (без ловер кэйса)-->
+                        <!--(К)Коммуникационные шкафы (без ловер кэйса)-->
+
+                        <!--Компьютерное оборудование (без ловер кэйса)-->
+                        <!--Компьютерное оборудование (без ловер кэйса)-->
+                        <!--Компьютерное оборудование (без ловер кэйса)-->
+                        <td>
+                            <form id="filterComp">
+
+                            </form>
+                            <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
+                            <div>
+
+                                <a class="btn btn-default" type="button" onclick="updateTableComp()">
+                                    Компьютерное оборудование <span class="glyphicon glyphicon-filter"
+                                                                    aria-hidden="true"></span>
+                                </a>
+
+                            </div>
+                        </td>
+                        <!--(К)Компьютерное оборудование (без ловер кэйса)-->
+                        <!--(К)Компьютерное оборудование (без ловер кэйса)-->
+                        <!--(К)Компьютерное оборудование (без ловер кэйса)-->
+
+                        <!--Телекомуникационные (без ловер кэйса)-->
+                        <!--Телекомуникационные (без ловер кэйса)-->
+                        <!--Телекомуникационные (без ловер кэйса)-->
+                        <td>
+                            <form id="filterTelecom">
+
+                            </form>
+                            <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
+                            <div>
+
+                                <a class="btn btn-default" type="button" onclick="updateTableTelecom()">
+                                    Телекомуникационные <span class="glyphicon glyphicon-filter"
+                                                              aria-hidden="true"></span>
+                                </a>
+
+                            </div>
+                        </td>
+                        <!--(К)Телекомуникационные (без ловер кэйса)-->
+                        <!--(К)Телекомуникационные (без ловер кэйса)-->
+                        <!--(К)Телекомуникационные (без ловер кэйса)-->
+
+
+                        <!--Офисное оборудование (без ловер кэйса)-->
+                        <!--Офисное оборудование (без ловер кэйса)-->
+                        <!--Офисное оборудование (без ловер кэйса)-->
+                        <td>
+                            <form id="filterOffice">
+
+                            </form>
+                            <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
+                            <div>
+
+                                <a class="btn btn-default" type="button" onclick="updateTableOffice()">
+                                    Офисное оборудование <span class="glyphicon glyphicon-filter"
+                                                               aria-hidden="true"></span>
+                                </a>
+
+                            </div>
+                        </td>
+                        <!--(К)Офисное оборудование (без ловер кэйса)-->
+                        <!--(К)Офисное оборудование (без ловер кэйса)-->
+                        <!--(К)Офисное оборудование (без ловер кэйса)-->
+
+                        <!--Пожарно-охранное оборудование (без ловер кэйса)-->
+                        <!--Пожарно-охранное оборудование (без ловер кэйса)-->
+                        <!--Пожарно-охранное оборудование (без ловер кэйса)-->
+                        <td>
+                            <form id="filterPozhar">
+
+                            </form>
+                            <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
+                            <div>
+
+                                <a class="btn btn-default" type="button" onclick="updateTablePozhar()">
+                                    Пожарно-охранное оборудование <span class="glyphicon glyphicon-filter"
+                                                                        aria-hidden="true"></span>
+                                </a>
+
+                            </div>
+                        </td>
+                        <!--(К)Пожарно-охранное оборудование (без ловер кэйса)-->
+                        <!--(К)Пожарно-охранное оборудование (без ловер кэйса)-->
+                        <!--(К)Пожарно-охранное оборудование (без ловер кэйса)-->
+                    </tr>
+                </table>
+                <!-- </div> --><!--Удаляет панельку белой полоски под заполнение-->
+            </div> <!-- Ответственный За ширину -->
         </div>
 
 
@@ -247,7 +394,8 @@
                         <label for="naimenovanie" class="control-label col-xs-3">Наименование</label>
 
                         <div class="col-xs-9">
-                            <input type="text" class="form-control" id="naimenovanie" name="naimenovanie" placeholder="1000">
+                            <input type="text" class="form-control" id="naimenovanie" name="naimenovanie"
+                                   placeholder="1000">
                         </div>
                     </div>
                     <!-- (K) Наименование в добавление -->
@@ -256,7 +404,8 @@
                         <label for="proizvoditel" class="control-label col-xs-3">Производитель</label>
 
                         <div class="col-xs-9">
-                            <input type="text" class="form-control" id="proizvoditel" name="proizvoditel" placeholder="1000">
+                            <input type="text" class="form-control" id="proizvoditel" name="proizvoditel"
+                                   placeholder="1000">
                         </div>
                     </div>
 
@@ -264,7 +413,8 @@
                         <label for="edizmereniya" class="control-label col-xs-3">Ед.Изм</label>
 
                         <div class="col-xs-9">
-                            <input type="text" class="form-control" id="edizmereniya" name="edizmereniya" placeholder="1000">
+                            <input type="text" class="form-control" id="edizmereniya" name="edizmereniya"
+                                   placeholder="1000">
                         </div>
                     </div>
 
@@ -288,7 +438,8 @@
                         <label for="primechanie" class="control-label col-xs-3">Примечание</label>
 
                         <div class="col-xs-9">
-                            <input type="text" class="form-control" id="primechanie" name="primechanie" placeholder="1000">
+                            <input type="text" class="form-control" id="primechanie" name="primechanie"
+                                   placeholder="1000">
                         </div>
                     </div>
 
@@ -301,13 +452,13 @@
                     </div>
 
                     <div class="form-group">
-                       <label for="picture" class="control-label col-xs-3">Картинко-имя(mb сделать картинку справа)</label>
+                        <label for="picture" class="control-label col-xs-3">Картинко-имя(mb сделать картинку
+                            справа)</label>
 
-                       <div class="col-xs-9">
-                           <input type="text" class="form-control" id="picture" name="picture" placeholder="1000">
-                       </div>
-                   </div>
-
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="picture" name="picture" placeholder="1000">
+                        </div>
+                    </div>
 
 
                     <div class="form-group">
@@ -322,7 +473,7 @@
         </div>
     </div>
 </div>
-<jsp:include page="fragments/footer.jsp"/>
+<%--<jsp:include page="fragments/footer.jsp"/>--%>
 </body>
 <jsp:include page="fragments/i18n.jsp"/>
 <script type="text/javascript">

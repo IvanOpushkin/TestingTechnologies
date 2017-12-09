@@ -56,14 +56,6 @@ public class MealRestController extends AbstractMealController {
 
 
     @Override
-    @GetMapping(value = "/setevoe")
-    public List<MealWithExceed> getSetevoe() {
-        System.out.println("ok");
-        return super.getSetevoe();
-    }
-
-
-    @Override
     @GetMapping(value = "/filter")
     public List<MealWithExceed> getBetween(
             @RequestParam(value = "startDate", required = false) LocalDate startDate, @RequestParam(value = "startTime", required = false) LocalTime startTime,

@@ -51,14 +51,64 @@ public class MealAjaxController extends AbstractMealController {
     @PostMapping(value = "/filterSetevoe", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getSetevoe()
     {
-        return super.getSetevoe();
+        return super.getType("Сетевое оборудование");
     }
 
     @PostMapping(value = "/filterSantex", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getSantex()
     {
-        return super.getSantex();
+        return super.getType("Сантехническое оборудование");
     }
+
+    @PostMapping(value = "/filterZashitLotok", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getZashitLotok()
+    {
+        return super.getType("Защитный лоток");
+    }
+
+    @PostMapping(value = "/filterElectroShit", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getElectroshit()
+    {
+
+        return super.getType("Электрощитовое оборудование");
+    }
+
+    @PostMapping(value = "/filterSvetovoe", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getSvetovoe()
+    {
+        return super.getType("Световое оборудование");
+    }
+
+    @PostMapping(value = "/filterCommun", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getCommun()
+    {
+        return super.getType("Коммуникационные шкафы");
+    }
+
+    @PostMapping(value = "/filterComp", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getComp()
+    {
+        return super.getType("Компьютерное оборудование");
+    }
+
+    @PostMapping(value = "/filterTelecom", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getTelecom()
+    {
+        return super.getType("Телекомуникационные");
+    }
+
+    @PostMapping(value = "/filterOffice", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getOffice()
+    {
+        return super.getType("Офисное оборудование");
+    }
+
+    @PostMapping(value = "/filterPozhar", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getPozhar()
+    {
+        return super.getType("Пожарно-охранное оборудование");
+    }
+
 /*
     @Override
     @PostMapping(value = "/setevoe", produces = MediaType.APPLICATION_JSON_VALUE)
