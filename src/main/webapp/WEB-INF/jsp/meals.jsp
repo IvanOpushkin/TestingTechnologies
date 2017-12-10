@@ -552,8 +552,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="picture" class="control-label col-xs-3">Картинко-имя(mb сделать картинку
-                            справа)</label>
+                        <label for="picture" class="control-label col-xs-3">Картинко-имя</label>
 
                         <div class="col-xs-9">
                             <input type="text" class="form-control" id="picture" name="picture" placeholder="1000">
