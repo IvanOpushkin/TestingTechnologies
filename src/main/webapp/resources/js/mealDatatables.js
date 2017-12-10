@@ -140,6 +140,49 @@ function updateTablePozhar() {
     });
 }
 
+//10.Цифровое
+function updateTableCifro() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterCifro",
+        data: $("#filterCifro").serialize(),
+        success: updateTableByData
+    });
+}
+
+
+//11.Электромонтажное
+function updateTableElectromont() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterElectromont",
+        data: $("#filterElectromont").serialize(),
+        success: updateTableByData
+    });
+}
+
+
+//12.Монтажное оборудование
+function updateTableMont() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterMont",
+        data: $("#filterMont").serialize(),
+        success: updateTableByData
+    });
+}
+
+
+//13.Аккумуляторы
+function updateTableAkkamul() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterAkkamul",
+        data: $("#filterAkkamul").serialize(),
+        success: updateTableByData
+    });
+}
+
 
 function clearFilterZashitLotok() {
     $("#filterZashitLotok")[0].reset();

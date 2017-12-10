@@ -109,6 +109,31 @@ public class MealAjaxController extends AbstractMealController {
         return super.getType("Пожарно-охранное оборудование");
     }
 
+    @PostMapping(value = "/filterCifro", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getCifro()
+    {
+        return super.getType("Цифровое");
+    }
+
+    @PostMapping(value = "/filterElectromont", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getElectromont()
+    {
+        return super.getType("Электромонтажное");
+    }
+
+    @PostMapping(value = "/filterMont", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getMont()
+    {
+        return super.getType("Монтажное оборудование");
+    }
+
+
+    @PostMapping(value = "/filterAkkamul", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getAkkamul()
+    {
+        return super.getType("Аккумуляторы");
+    }
+
 /*
     @Override
     @PostMapping(value = "/setevoe", produces = MediaType.APPLICATION_JSON_VALUE)
