@@ -21,11 +21,11 @@ public interface CrudMealRepository extends JpaRepository<Meal, Integer> {
     @Override
     Meal save(Meal item);
 
-    @Query("SELECT m FROM Meal m WHERE m.user.id=:userId ORDER BY m.dateTime DESC")
+    @Query("SELECT m FROM Meal m WHERE m.user.id=:userId ORDER BY m.cod ASC")
     List<Meal> getAll(@Param("userId") int userId);
 
     @SuppressWarnings("JpaQlInspection")
-    @Query("SELECT m from Meal m WHERE m.user.id=:userId AND m.dateTime BETWEEN :startDate AND :endDate ORDER BY m.dateTime DESC")
+    @Query("SELECT m from Meal m WHERE m.user.id=:userId AND m.dateTime BETWEEN :startDate AND :endDate ORDER BY m.cod ASC")
     List<Meal> getBetween(@Param("startDate") LocalDateTime startDate, @Param("endDate") LocalDateTime endDate, @Param("userId") int userId);
 
     @Query("SELECT m FROM Meal m JOIN FETCH m.user WHERE m.id = ?1 and m.user.id = ?2")
