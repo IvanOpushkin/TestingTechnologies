@@ -372,19 +372,26 @@
                         <!--(К)Аккумуляторы (без ловер кэйса)-->
 
                         <td>
-                            <a class="btn btn-primary" style="width:100%" onclick="add()">
+
+                            <a class="btn btn-default" type="button" style="width:100%" onclick="clearFilterElectroshit()">
+                               Всё <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </a>
+
+                        </td>
+
+                        <td style="text-align:right">
+                            <a class="btn btn-primary" onclick="add()">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                <spring:message code="common.add"/>
+                                Добавить
                             </a>
                         </td>
                     </tr>
                 </table>
+
                 <!-- </div> --><!--Удаляет панельку белой полоски под заполнение-->
             </div> <!-- Ответственный За ширину -->
         </div>
-
-
-        <br><br>
+        <br>
 
         <table id="datatable">
             <thead>

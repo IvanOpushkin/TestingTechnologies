@@ -59,7 +59,25 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
 
     @Override
     public List<Meal> getAll(int userId) {
-        return crudMealRepository.getAll(userId);
+        List<Meal> noRichi = crudMealRepository.getAll(userId);
+
+        //Временная заменя в самой проге
+
+        for (Meal richi : noRichi)
+        {
+
+            if (richi.getPrimechanie().contains("ричи"))
+            {
+                //System.out.println("1");
+                richi.setDescription(richi.getDescription()+"ричи");
+                String primechChange = "" + richi.getPrimechanie().replace("ричи","");
+                //System.out.println(primechChange);
+                richi.setPrimechanie(primechChange);
+
+            }
+
+        }
+        return noRichi;
     }
 
     @Override
