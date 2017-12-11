@@ -500,8 +500,10 @@
                 <form class="form-horizontal" id="detailsForm">
                     <input type="hidden" id="id" name="id">
 
+
+                   <%--
                     <div class="form-group">
-                        <label for="calories" class="control-label col-xs-3">calories</label>
+                        <label for="calories" class="control-label col-xs-3">Артикул</label>
 
                         <div class="col-xs-9">
                             <input type="text" class="form-control" id="calories" name="calories"
