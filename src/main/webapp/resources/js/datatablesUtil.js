@@ -52,6 +52,7 @@ function updateRow(id) {
         $("#editRow").modal();
     });
 }
+//1/2 часть делита, вторая ниже
 
 function deleteRow(id) {
     $.ajax({
@@ -63,6 +64,7 @@ function deleteRow(id) {
         }
     });
 }
+
 
 function updateTableByData(data) {
     datatableApi.clear().rows.add(data).draw();
@@ -118,11 +120,13 @@ function renderEditBtn(data, type, row) {
     }
 }
 
+
 function renderDeleteBtn(data, type, row) {
     if (type === "display") {
         return "<a onclick='deleteRow(" + row.id + ");'>" +
             "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a>";
     }
+
 }
 
 $(document).on('submit', '.myForm', function(e) {

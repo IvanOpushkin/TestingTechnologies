@@ -21,10 +21,9 @@
             padding: 15px;
         }
 
-        .button1
-        {
+        .button1 {
             width: 10px;
-            color:red;
+            color: red;
         }
 
 
@@ -69,7 +68,8 @@
                              -->
 
 
-                                <a class="btn btn-default" type="button" style="width:100%" onclick="updateTableSantex()">
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableSantex()">
                                     Сантехническое оборудование <span class="glyphicon glyphicon-filter"
                                                                       aria-hidden="true"></span>
                                 </a>
@@ -94,7 +94,8 @@
                                  </a>
                                  -->
 
-                                <a class="btn btn-default" type="button" style="width:100%" onclick="updateTableZashitLotok()">
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableZashitLotok()">
                                     Защитные лотки <span class="glyphicon glyphicon-filter"
                                                          aria-hidden="true"></span>
                                 </a>
@@ -121,7 +122,8 @@
                                     -->
 
 
-                                <a class="btn btn-default" type="button" style="width:100%" onclick="updateTableElectroshit()">
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableElectroshit()">
                                     Электрощитовое оборудование <span class="glyphicon glyphicon-filter"
                                                                       aria-hidden="true"></span>
                                 </a>
@@ -142,7 +144,8 @@
                             <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
                             <div>
 
-                                <a class="btn btn-default" type="button" style="width:100%" onclick="updateTableSetevoe()">
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableSetevoe()">
                                     Сетевое Оборудование <span class="glyphicon glyphicon-filter"
                                                                aria-hidden="true"></span>
                                 </a>
@@ -163,7 +166,8 @@
                             <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
                             <div>
 
-                                <a class="btn btn-default" type="button" style="width:100%" onclick="updateTableSvetovoe()">
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableSvetovoe()">
                                     Световое Оборудование <span class="glyphicon glyphicon-filter"
                                                                 aria-hidden="true"></span>
                                 </a>
@@ -186,7 +190,8 @@
                             <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
                             <div>
 
-                                <a class="btn btn-default" type="button" style="width:100%" onclick="updateTableCommun()">
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableCommun()">
                                     Коммуникационные шкафы <span class="glyphicon glyphicon-filter"
                                                                  aria-hidden="true"></span>
                                 </a>
@@ -228,7 +233,8 @@
                             <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
                             <div>
 
-                                <a class="btn btn-default" type="button" style="width:100%" onclick="updateTableTelecom()">
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableTelecom()">
                                     Телекомуникационные <span class="glyphicon glyphicon-filter"
                                                               aria-hidden="true"></span>
                                 </a>
@@ -250,7 +256,8 @@
                             <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
                             <div>
 
-                                <a class="btn btn-default" type="button" style="width:100%" onclick="updateTableOffice()">
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableOffice()">
                                     Офисное оборудование <span class="glyphicon glyphicon-filter"
                                                                aria-hidden="true"></span>
                                 </a>
@@ -271,7 +278,8 @@
                             <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
                             <div>
 
-                                <a class="btn btn-default" type="button" style="width:100%" onclick="updateTablePozhar()">
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTablePozhar()">
                                     Пожарно-охранное оборудование <span class="glyphicon glyphicon-filter"
                                                                         aria-hidden="true"></span>
                                 </a>
@@ -295,7 +303,8 @@
                             <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
                             <div>
 
-                                <a class="btn btn-default" type="button" style="width:100%" onclick="updateTableCifro()">
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableCifro()">
                                     Цифровое <span class="glyphicon glyphicon-filter"
                                                    aria-hidden="true"></span>
                                 </a>
@@ -317,9 +326,10 @@
                             <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
                             <div>
 
-                                <a class="btn btn-default" type="button" style="width:100%" onclick="updateTableElectromont()">
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableElectromont()">
                                     Электромонтажное <span class="glyphicon glyphicon-filter"
-                                                   aria-hidden="true"></span>
+                                                           aria-hidden="true"></span>
                                 </a>
 
                             </div>
@@ -340,7 +350,7 @@
 
                                 <a class="btn btn-default" type="button" style="width:100%" onclick="updateTableMont()">
                                     Монтажное оборудование <span class="glyphicon glyphicon-filter"
-                                                           aria-hidden="true"></span>
+                                                                 aria-hidden="true"></span>
                                 </a>
 
                             </div>
@@ -360,9 +370,10 @@
                             <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
                             <div>
 
-                                <a class="btn btn-default" type="button" style="width:100%" onclick="updateTableAkkamul()">
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableAkkamul()">
                                     Аккумуляторы <span class="glyphicon glyphicon-filter"
-                                                           aria-hidden="true"></span>
+                                                       aria-hidden="true"></span>
                                 </a>
 
                             </div>
@@ -374,22 +385,76 @@
                         <td>
 
                             <div>
-                            <a class="btn btn-default" type="button" style="width:100%" onclick="clearFilterElectroshit()">
-                               Всё <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                            </a>
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="clearFilterElectroshit()">
+                                    Всё <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </a>
                             </div>
 
                         </td>
 
-                        <td style="text-align:right">
+
+                    </tr>
+                    <tr>
+
+                        <!--Без цены -->
+                        <!--Без цены -->
+                        <!--Без цены -->
+                        <td>
+                            <form id="filterBezCeni">
+
+                            </form>
+                            <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
                             <div>
-                            <a class="btn btn-primary" onclick="add()">
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                Добавить
-                            </a>
+
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableBezCeni()">
+                                    Без цены <span class="glyphicon glyphicon-filter"
+                                                       aria-hidden="true"></span>
+                                </a>
+
+                            </div>
+                        </td>
+                        <!--(К)Без цены -->
+                        <!--(К)Без цены -->
+                        <!--(К)Без цены -->
+
+                        <!--Теплоизоляция и защитные покрытия -->
+                        <!--Теплоизоляция и защитные покрытия -->
+                        <!--Теплоизоляция и защитные покрытия -->
+                        <td>
+                            <form id="filterTeploAndDef">
+
+                            </form>
+                            <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
+                            <div>
+
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableTeploAndDef()">
+                                    Теплоизоляция и защитные покрытия <span class="glyphicon glyphicon-filter"
+                                                       aria-hidden="true"></span>
+                                </a>
+
+                            </div>
+                        </td>
+                        <!--(К)Теплоизоляция и защитные покрытия -->
+                        <!--(К)Теплоизоляция и защитные покрытия -->
+                        <!--(К)Теплоизоляция и защитные покрытия -->
+
+
+
+
+
+                        <td>
+                            <div>
+                                <a class="btn btn-primary" type="button" onclick="add()" style="width:150%">
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    Добавить
+                                </a>
                             </div>
                         </td>
                     </tr>
+
                 </table>
 
                 <!-- </div> --><!--Удаляет панельку белой полоски под заполнение-->
@@ -405,7 +470,8 @@
                 <th>Артикул</th>
                 <th>Тип1</th>
                 <th>Тип2</th>
-                <th>Код</th>
+                <th>Del</th>
+                <th>*Код*</th>
                 <th>Наименование</th>
                 <th>Производитель</th>
                 <th>Ед.изм</th>
@@ -415,7 +481,8 @@
 
 
                 <th></th>
-                <th></th>
+
+
             </tr>
             </thead>
         </table>
@@ -432,30 +499,6 @@
             <div class="modal-body">
                 <form class="form-horizontal" id="detailsForm">
                     <input type="hidden" id="id" name="id">
-
-
-                    <%--
-                    <div class="form-group">
-                        <label for="dateTime" class="control-label col-xs-3"><spring:message
-                                code="meal.dateTime"/></label>
-
-                        <div class="col-xs-9">
-                            <input class="form-control" id="dateTime" name="dateTime"
-                                   placeholder="<spring:message code="meal.dateTime"/>">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="description" class="control-label col-xs-3"><spring:message
-                                code="meal.description"/></label>
-
-                        <div class="col-xs-9">
-                            <input type="text" class="form-control" id="description" name="description"
-                                   placeholder="<spring:message code="meal.description"/>">
-                        </div>
-                    </div>
-
-
 
                     <div class="form-group">
                         <label for="calories" class="control-label col-xs-3">calories</label>

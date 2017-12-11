@@ -184,6 +184,28 @@ function updateTableAkkamul() {
 }
 
 
+//14.Без цены
+function updateTableBezCeni() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterBezCeni",
+        data: $("#filterBezCeni").serialize(),
+        success: updateTableByData
+    });
+}
+
+
+//14.Теплоизоляция и защитные покрытия
+function updateTableTeploAndDef() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterTeploAndDef",
+        data: $("#filterTeploAndDef").serialize(),
+        success: updateTableByData
+    });
+}
+
+
 function clearFilterZashitLotok() {
     $("#filterZashitLotok")[0].reset();
     $.get(ajaxUrl, updateTableByData);
@@ -229,10 +251,16 @@ $(function () {
             },
             {
                 "data": "type2"
+            } ,
+            {
+                "render": renderDeleteBtn,
+                "defaultContent": "",
+                "orderable": false
             },
             {
                 "data": "cod"
-            },
+            } ,
+
             {
                 "data": "naimenovanie"
             },
@@ -257,12 +285,8 @@ $(function () {
                 "render": renderEditBtn,
                 "defaultContent": "",
                 "orderable": false
-            },
-            {
-                "render": renderDeleteBtn,
-                "defaultContent": "",
-                "orderable": false
             }
+
 
         ],
         "order": [

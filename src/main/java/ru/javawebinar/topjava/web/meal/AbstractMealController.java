@@ -75,6 +75,22 @@ public abstract class AbstractMealController {
         return meallReall;
     }
 
+    public List<MealWithExceed> getBezCeni() {
+        int userId = AuthorizedUser.id();
+        log.info("getBezCeni for User {}", userId);
+        List<MealWithExceed> meall = MealsUtil.getWithExceeded(service.getAll(userId), AuthorizedUser.getCaloriesPerDay());
+        List<MealWithExceed> meallReall = new ArrayList<MealWithExceed>();
+
+        for (MealWithExceed mwe:meall)
+        {
+            if (mwe.getCena() == 0)
+            {
+                meallReall.add(mwe);
+            }
+        }
+        return meallReall;
+    }
+
 
 
 
