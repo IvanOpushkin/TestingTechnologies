@@ -373,17 +373,21 @@
 
                         <td>
 
+                            <div>
                             <a class="btn btn-default" type="button" style="width:100%" onclick="clearFilterElectroshit()">
                                Всё <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                             </a>
+                            </div>
 
                         </td>
 
                         <td style="text-align:right">
+                            <div>
                             <a class="btn btn-primary" onclick="add()">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                 Добавить
                             </a>
+                            </div>
                         </td>
                     </tr>
                 </table>
