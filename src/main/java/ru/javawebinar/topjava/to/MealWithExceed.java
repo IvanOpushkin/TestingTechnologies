@@ -26,7 +26,7 @@ public class MealWithExceed extends BaseTo {
     private final String primechanie;
     private final String articul;
     private final String picture;
-
+    private Integer fullPriceOfAll;
     private final boolean exceed;
 
     public MealWithExceed(@JsonProperty("id") Integer id,
@@ -63,7 +63,7 @@ public class MealWithExceed extends BaseTo {
         this.picture=picture;
 
 
-
+      //  this.fullPrice=kolvo*cena;
         this.exceed = true;
     }
 
@@ -126,6 +126,15 @@ public class MealWithExceed extends BaseTo {
 
     public boolean isExceed() {
         return exceed;
+    }
+
+
+    public Integer getFullPriceOfAll() {
+        return fullPriceOfAll;
+    }
+
+    public void setFullPriceOfAll(Integer fullPriceOfAll) {
+        this.fullPriceOfAll = fullPriceOfAll;
     }
 
     @Override

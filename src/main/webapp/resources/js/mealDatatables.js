@@ -240,7 +240,7 @@ $(function () {
 
                "render": function(data, type, row)
                 {
-                   return '<a href="https://s3.eu-central-1.amazonaws.com/photosnova/PhotoCablesMendeleev/'+data+'.jpg"><img src="https://s3.eu-central-1.amazonaws.com/photosnova/PhotoCablesMendeleev/'+data+'.jpg" style="height:240px;width:180px;"/></a>';
+                   return '<a href="https://s3.eu-central-1.amazonaws.com/photosnova/PhotoCablesMendeleevSmaller/'+data+'.jpg" target="_blank"><img src="https://s3.eu-central-1.amazonaws.com/photosnova/PhotoCablesMendeleevSmaller/'+data+'.jpg" style="height:240px;width:180px;"/></a>';
                 }
             },
             {
@@ -275,9 +275,28 @@ $(function () {
             {
                 "data": "kolvo"
             },
+
             {
                 "data": "cena"
             },
+            {"data":"fullPrice",
+                "render":function(data, type, full, meta){
+                    return full.kolvo * full.cena;
+                }
+            },
+            //Full Price Try
+
+            /*
+            КАКТО ЭТО ВЫВЕСТИ В ФУТЕР
+            {
+             "data": "em",
+             "render":function(data, type, full, meta){
+             var table = $('#datatable').DataTable();
+             return table.column( 10 ).data().sum();
+
+
+             }
+             },*/
             {
                 "data": "primechanie"
             },

@@ -64,14 +64,20 @@ public abstract class AbstractMealController {
         log.info("getType"+type+"for User {}", userId);
         List<MealWithExceed> meall = MealsUtil.getWithExceeded(service.getAll(userId), AuthorizedUser.getCaloriesPerDay());
         List<MealWithExceed> meallReall = new ArrayList<MealWithExceed>();
+       // Integer fullPriceOfAll = 0;
 
         for (MealWithExceed mwe:meall)
         {
             if (mwe.getType1().contains(type))
             {
                 meallReall.add(mwe);
+              //  fullPriceOfAll=fullPriceOfAll+mwe.getCena()*mwe.getKolvo();
             }
         }
+
+       // for (MealWithExceed mwe:meallReall)
+         //   mwe.setFullPriceOfAll(fullPriceOfAll);
+
         return meallReall;
     }
 
@@ -81,11 +87,16 @@ public abstract class AbstractMealController {
         List<MealWithExceed> meall = MealsUtil.getWithExceeded(service.getAll(userId), AuthorizedUser.getCaloriesPerDay());
         List<MealWithExceed> meallReall = new ArrayList<MealWithExceed>();
 
+
         for (MealWithExceed mwe:meall)
         {
+
+
             if (mwe.getCena() == 0)
             {
                 meallReall.add(mwe);
+
+
             }
         }
         return meallReall;

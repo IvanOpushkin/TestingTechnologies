@@ -100,6 +100,7 @@ public class Meal extends AbstractBaseEntity {
     //@SafeHtml(groups = {View.ValidatedRestUI.class})
     private Integer cena;
 
+
     //primechanie
     //5
     @Column(name = "primechanie", nullable = false)
@@ -124,6 +125,7 @@ public class Meal extends AbstractBaseEntity {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @NotNull(groups = View.Persist.class)
     private User user;
+
 
 
     //JSON игнорит формообразование базовое? Хранит у себя в памятке?
@@ -152,6 +154,7 @@ public class Meal extends AbstractBaseEntity {
         this.primechanie = primechanie;
         this.articul = articul;
         this.picture = picture;
+       // this.fullPrice = kolvo*cena;
 
     }
 
@@ -289,6 +292,7 @@ public class Meal extends AbstractBaseEntity {
     public void setType2(String type2) {
         this.type2 = type2;
     }
+
 
     @Override
     public String toString() {
