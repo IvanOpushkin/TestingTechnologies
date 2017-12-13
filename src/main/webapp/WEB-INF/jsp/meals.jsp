@@ -498,6 +498,10 @@
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" id="detailsForm">
+
+
+
+
                     <input type="hidden" id="id" name="id">
 
 
@@ -516,9 +520,15 @@
                     <div class="form-group">
                         <label for="type1" class="control-label col-xs-3">Тип1</label>
 
+
                         <div class="col-xs-9">
                             <input type="text" class="form-control" id="type1" name="type1"
                                    placeholder="type1">
+
+                            <!--
+                                <option value="test">test</option>
+                                <option value="test2">test2</option> -->
+
                         </div>
                     </div>
 

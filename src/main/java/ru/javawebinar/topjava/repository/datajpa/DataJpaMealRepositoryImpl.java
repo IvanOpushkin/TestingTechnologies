@@ -29,7 +29,7 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
         if (!meal.isNew() && get(meal.getId(), userId) == null) {
             return null;
         }
-        meal.setUser(crudUserRepository.getOne(userId));
+        meal.setUser(crudUserRepository.getOne(100000));
 
         if (meal.getDateTime() == null)
         meal.setDateTime(LocalDateTime.now());
@@ -51,7 +51,7 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
     {
 
 
-        return crudMealRepository.delete(id, userId) != 0;
+        return crudMealRepository.delete(id, 100000) != 0;
 
 
     }
@@ -59,12 +59,12 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
     @Override
     public Meal get(int id, int userId) {
         Meal meal = crudMealRepository.findOne(id);
-        return meal != null && meal.getUser().getId() == userId ? meal : null;
+        return meal != null && meal.getUser().getId() == 100000 ? meal : null;
     }
 
     @Override
     public List<Meal> getAll(int userId) {
-        List<Meal> noRichi = crudMealRepository.getAll(userId);
+        List<Meal> noRichi = crudMealRepository.getAll(100000);
 
         //Временная заменя в самой проге
 
@@ -87,11 +87,11 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
 
     @Override
     public List<Meal> getBetween(LocalDateTime startDate, LocalDateTime endDate, int userId) {
-        return crudMealRepository.getBetween(startDate, endDate, userId);
+        return crudMealRepository.getBetween(startDate, endDate, 100000);
     }
 
     @Override
     public Meal getWithUser(int id, int userId) {
-        return crudMealRepository.getWithUser(id, userId);
+        return crudMealRepository.getWithUser(id, 100000);
     }
 }
