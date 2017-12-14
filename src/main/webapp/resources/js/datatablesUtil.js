@@ -55,6 +55,7 @@ function updateRow(id) {
 //1/2 часть делита, вторая ниже
 
 function deleteRow(id) {
+
     $.ajax({
         url: ajaxUrl + id,
         type: "DELETE",
@@ -63,6 +64,16 @@ function deleteRow(id) {
             successNoty("common.deleted");
         }
     });
+
+    /*
+    $("").html(i18n["editTitle"]);
+    $.get(ajaxUrl + id, function (data) {
+        $.each(data, function (key, value) {
+            form.find("input[name='" + key + "']").val(value);
+        });
+        $("#editRow").modal();
+    });
+    */
 }
 
 
@@ -129,6 +140,26 @@ function renderDeleteBtn(data, type, row) {
 
 }
 
+
+$('#detailsForm').on('submit', function(e) {
+
+   location.reload();
+
+    //e.preventDefault();
+    // e.stopPropagation(); // only neccessary if something above is listening to the (default-)event too
+
+
+});
+
+/*
+$(document).on('submit', '.myForm', function(e) {
+    location.reload();
+    // window.location.reload();
+});
+*/
+
+
+
 $(document).on('submit', '.myForm', function(e) {
     $.ajax({
         url: $(this).attr('action'),
@@ -139,4 +170,17 @@ $(document).on('submit', '.myForm', function(e) {
         }
     });
     e.preventDefault();
+   // window.location.reload();
 });
+
+/*
+$('#detailsForm').on('submit', function(e) {
+
+    window.location.reload();
+
+    //e.preventDefault();
+   // e.stopPropagation(); // only neccessary if something above is listening to the (default-)event too
+
+
+});
+   */

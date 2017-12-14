@@ -7,8 +7,6 @@ import ru.javawebinar.topjava.View;
 import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.to.MealWithExceed;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 
 @RestController

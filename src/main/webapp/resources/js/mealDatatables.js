@@ -254,8 +254,15 @@ $(function () {
             } ,
             {
                 "render": renderDeleteBtn,
+                    //function(data, type, row)
+              //  {
+                   // return '<button type="button" class="modal fade" data-toggle="modal" data-target="#modalTitle" id="editRow">Open Modal</button>'
+               // },
                 "defaultContent": "",
                 "orderable": false
+                //return '<div class="form-group"><button type="button" onclick="renderDeleteBtn">&times;</button></div>'
+                //renderDeleteBtn,
+
             },
             {
                 "data": "cod"

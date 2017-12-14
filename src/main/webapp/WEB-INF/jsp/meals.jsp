@@ -525,8 +525,33 @@
 
 
                         <div class="col-xs-9">
-                            <input type="text" class="form-control" id="type1" name="type1"
-                                   placeholder="type1">
+                          <!--  <input type="text" class="form-control" id="type1" name="type1"
+                                   placeholder="type1"> -->
+
+                            <select class="form-control" id="type1" name ="type1">
+                                    <option>Сетевое оборудование</option>
+                                    <option>Сантехническое оборудование</option>
+                                    <option>Защитный лоток</option>
+                                    <option>Электрощитовое оборудование</option>
+                                    <option>Световое оборудование</option>
+                                    <option>Коммуникационные шкафы</option>
+                                    <option>Компьютерное оборудование</option>
+                                    <option>Телекомуникационные</option>
+                                    <option>Офисное оборудование</option>
+                                    <option>Пожарно-охранное оборудование</option>
+                                    <option>Цифровое</option>
+                                    <option>Электромонтажное</option>
+                                    <option>Монтажное оборудование</option>
+                                    <option>Аккумуляторы</option>
+                                    <option>Теплоизоляция и защитные покрытия</option>
+
+
+                            </select>
+
+
+
+
+
 
                             <!--
                                 <option value="test">test</option>
