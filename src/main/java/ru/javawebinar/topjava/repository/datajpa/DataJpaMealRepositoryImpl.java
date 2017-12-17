@@ -31,8 +31,11 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
         }
         meal.setUser(crudUserRepository.getOne(100000));
 
+       //DEFAULT OPTIONS SETUP
         if (meal.getType1() == null)
             meal.setType1("");
+        if (meal.getEdizmereniya() == null)
+            meal.setEdizmereniya("");
         if (meal.getDateTime() == null)
         meal.setDateTime(LocalDateTime.now());
         if (meal.getCod() == null)
@@ -45,6 +48,7 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
         meal.setCalories("o");
         if (meal.getDescription() == null)
         meal.setDescription("o");
+        //(K)DEFAULT OPTIONS SETUP
         return crudMealRepository.save(meal);
     }
 

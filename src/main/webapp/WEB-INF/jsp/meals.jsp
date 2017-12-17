@@ -31,8 +31,11 @@
 </head>
 <jsp:include page="fragments/headTag.jsp"/>
 <body>
+
+<!-- Выключает таблицы -->
 <script type="text/javascript" src="resources/js/datatablesUtil.js" defer></script>
 <script type="text/javascript" src="resources/js/mealDatatables.js" defer></script>
+<!-- (K)Выключает таблицы -->
 <jsp:include page="fragments/bodyHeader.jsp"/>
 
 
@@ -525,11 +528,42 @@
 
 
                         <div class="col-xs-9">
-                          <!--  <input type="text" class="form-control" id="type1" name="type1"
+
+                            <input type="text" class="form-control" list="type1" name="type1"
+                                   placeholder="type1" />
+
+                            <datalist id="type1">
+                                <option>Сетевое оборудование</option>
+                                <option>Сантехническое оборудование</option>
+                                <option>Защитный лоток</option>
+                                <option>Электрощитовое оборудование</option>
+                                <option>Световое оборудование</option>
+                                <option>Коммуникационные шкафы</option>
+                                <option>Компьютерное оборудование</option>
+                                <option>Телекомуникационные</option>
+                                <option>Офисное оборудование</option>
+                                <option>Пожарно-охранное оборудование</option>
+                                <option>Цифровое</option>
+                                <option>Электромонтажное</option>
+                                <option>Монтажное оборудование</option>
+                                <option>Аккумуляторы</option>
+                                <option>Теплоизоляция и защитные покрытия</option>
+
+                            </datalist>
+
+
+
+                            <!-- VERSION WITHOUT TAG BOG
+                            <input type="text" class="form-control" id="type1" name="type1"
                                    placeholder="type1"> -->
 
-                            <select class="form-control" id="type1" name ="type1">
-                                    <option>Сетевое оборудование</option>
+                            <!-- VERSION BIG BUG
+                            <select class="form-control" name ="type1"  >
+
+                                SELECTED НЕ БЫЛО ОБРАБОТАНО
+
+                                <option selected="selected" value="type1"></option>
+                                <option>Сетевое оборудование</option>
                                     <option>Сантехническое оборудование</option>
                                     <option>Защитный лоток</option>
                                     <option>Электрощитовое оборудование</option>
@@ -546,16 +580,8 @@
                                     <option>Теплоизоляция и защитные покрытия</option>
 
 
-                            </select>
 
-
-
-
-
-
-                            <!--
-                                <option value="test">test</option>
-                                <option value="test2">test2</option> -->
+                            </select>-->
 
                         </div>
                     </div>
@@ -607,8 +633,19 @@
                         <label for="edizmereniya" class="control-label col-xs-3">Ед.Изм</label>
 
                         <div class="col-xs-9">
-                            <input type="text" class="form-control" id="edizmereniya" name="edizmereniya"
-                                   placeholder="1000">
+
+
+
+                            <input type="text" class="form-control" list ="edizmereniya" name="edizmereniya"
+                                   placeholder="Единицы">
+
+                            <datalist id="edizmereniya">
+                                    <option>шт</option>
+                                    <option>Метры</option>
+                                    <option>кг</option>
+                            </datalist>
+
+
                         </div>
                     </div>
 
