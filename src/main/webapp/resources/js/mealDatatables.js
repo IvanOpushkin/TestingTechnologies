@@ -231,100 +231,118 @@ $.ajaxSetup({
 });
 
 $(function () {
+
     datatableApi = $('#datatable').DataTable(extendsOpts({
-        "columns": [
-            {
-                "data": "picture",
+
+        "columns"
+       :
+           [
+               {
+                   "data": "picture",
 
 
-
-               "render": function(data, type, row)
-                {
-                   return '<a href="https://s3.eu-central-1.amazonaws.com/photosnova/PhotoCablesMendeleevSmaller/'+data+'.jpg" target="_blank"><img src="https://s3.eu-central-1.amazonaws.com/photosnova/PhotoCablesMendeleevSmaller/'+data+'.jpg" style="height:240px;width:180px;"/></a>';
-                }
-            },
-            {
-                "data": "articul"
-            },
-            {
-                "data": "type1"
-            },
-            {
-                "data": "type2"
-            } ,
-            {
-                "render": renderDeleteBtn,
-                    //function(data, type, row)
-              //  {
+                   "render": function (data, type, row) {
+                       return '<a href="https://s3.eu-central-1.amazonaws.com/photosnova/PhotoCablesMendeleevSmaller/' + data + '.jpg" target="_blank"><img src="https://s3.eu-central-1.amazonaws.com/photosnova/PhotoCablesMendeleevSmaller/' + data + '.jpg" style="height:240px;width:180px;"/></a>';
+                   }
+               },
+               {
+                   "data": "articul"
+               },
+               {
+                   "data": "type1"
+               },
+               {
+                   "data": "type2"
+               },
+               {
+                   "render": renderDeleteBtn,
+                   //function(data, type, row)
+                   //  {
                    // return '<button type="button" class="modal fade" data-toggle="modal" data-target="#modalTitle" id="editRow">Open Modal</button>'
-               // },
-                "defaultContent": "",
-                "orderable": false
-                //return '<div class="form-group"><button type="button" onclick="renderDeleteBtn">&times;</button></div>'
-                //renderDeleteBtn,
+                   // },
+                   "defaultContent": "",
+                   "orderable": false
+                   //return '<div class="form-group"><button type="button" onclick="renderDeleteBtn">&times;</button></div>'
+                   //renderDeleteBtn,
 
-            },
-            {
-                "data": "cod"
-            } ,
+               },
+               {
+                   "data": "cod",
 
-            {
-                "data": "naimenovanie"
-            },
+                   "render": function (data, type, full, meta) {
 
-            //proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture
-            {
-                "data": "proizvoditel"
-            },
-            {
-                "data": "edizmereniya"
-            },
-            {
-                "data": "kolvo"
-            },
+                       var x = full.cod;
+                       var y = full.description;
+                       if (y.includes("ричи"))
+                           x = "0" + x;
 
-            {
-                "data": "cena"
-            },
-            {"data":"fullPrice",
+                       return x;
+
+                   }
+               },
+
+               {
+                   "data": "naimenovanie"
+               },
+
+               //proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture
+               {
+                   "data": "proizvoditel"
+               },
+               {
+                   "data": "edizmereniya"
+               },
+               {
+                   "data": "kolvo"
+               },
+
+               {
+                   "data": "cena"
+               },
+               {
+                   "data": "fullPrice",
+                   "render": function (data, type, full, meta) {
+                       return full.kolvo * full.cena;
+                   }
+               },
+               //Full Price Try
+
+               /*
+                КАКТО ЭТО ВЫВЕСТИ В ФУТЕР
+                {
+                "data": "em",
                 "render":function(data, type, full, meta){
-                    return full.kolvo * full.cena;
+                var table = $('#datatable').DataTable();
+                return table.column( 10 ).data().sum();
+
+
                 }
-            },
-            //Full Price Try
-
-            /*
-            КАКТО ЭТО ВЫВЕСТИ В ФУТЕР
-            {
-             "data": "em",
-             "render":function(data, type, full, meta){
-             var table = $('#datatable').DataTable();
-             return table.column( 10 ).data().sum();
-
-
-             }
-             },*/
-            {
-                "data": "primechanie"
-            },
-            {
-                "render": renderEditBtn,
-                "defaultContent": "",
-                "orderable": false
-            }
+                },*/
+               {
+                   "data": "primechanie"
+               },
+               {
+                   "render": renderEditBtn,
+                   "defaultContent": "",
+                   "orderable": false
+               }
 
 
-        ],
-        "order": [
-            [
-                0,
-                "desc"
-            ]
-        ],
-        "createdRow": function (row, data, dataIndex) {
-            $(row).addClass(data.exceed ? 'exceeded' : 'normal');
-        }
-    }));
+           ],
+               "order"
+       :
+           [
+               [
+                   0,
+                   "desc"
+               ]
+           ],
+               "createdRow"
+       :
+           function (row, data, dataIndex) {
+               $(row).addClass(data.exceed ? 'exceeded' : 'normal');
+           }
+       }));
 
     $.datetimepicker.setLocale(localeCode);
 
