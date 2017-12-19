@@ -140,7 +140,7 @@ function renderDeleteBtn(data, type, row) {
 
 }
 
-
+/*
 $('#detailsForm').on('submit', function(e) {
 
    location.reload();
@@ -150,6 +150,7 @@ $('#detailsForm').on('submit', function(e) {
 
 
 });
+*/
 
 /*
 $(document).on('submit', '.myForm', function(e) {

@@ -305,6 +305,13 @@ $(function () {
                        return full.kolvo * full.cena;
                    }
                },
+
+               {
+                   "data": "fullPriceOfAll",
+                   "render": function (data, type, full, meta) {
+                       return full.fullPriceOfAll;
+                   }
+               },
                //Full Price Try
 
                /*

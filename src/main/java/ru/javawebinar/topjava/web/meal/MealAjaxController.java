@@ -18,7 +18,10 @@ public class MealAjaxController extends AbstractMealController {
     @Override
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getAll() {
-        return super.getAll();
+
+        //Сэттинг на цену всего
+        return super.toFullPriceOfType(super.getAll());
+
     }
 
 
@@ -49,101 +52,106 @@ public class MealAjaxController extends AbstractMealController {
     @PostMapping(value = "/filterSetevoe", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getSetevoe()
     {
-        return super.getType("Сетевое оборудование");
+        return super.toFullPriceOfType(super.getType("Сетевое оборудование"));
+
+
+
+
+        //return super.getType("Сетевое оборудование");
     }
 
     @PostMapping(value = "/filterSantex", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getSantex()
     {
-        return super.getType("Сантехническое оборудование");
+        return super.toFullPriceOfType(super.getType("Сантехническое оборудование"));
     }
 
     @PostMapping(value = "/filterZashitLotok", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getZashitLotok()
     {
-        return super.getType("Защитный лоток");
+        return super.toFullPriceOfType(super.getType("Защитный лоток"));
     }
 
     @PostMapping(value = "/filterElectroShit", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getElectroshit()
     {
 
-        return super.getType("Электрощитовое оборудование");
+        return super.toFullPriceOfType(super.getType("Электрощитовое оборудование"));
     }
 
     @PostMapping(value = "/filterSvetovoe", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getSvetovoe()
     {
-        return super.getType("Световое оборудование");
+        return super.toFullPriceOfType(super.getType("Световое оборудование"));
     }
 
     @PostMapping(value = "/filterCommun", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getCommun()
     {
-        return super.getType("Коммуникационные шкафы");
+        return super.toFullPriceOfType(super.getType("Коммуникационные шкафы"));
     }
 
     @PostMapping(value = "/filterComp", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getComp()
     {
-        return super.getType("Компьютерное оборудование");
+        return super.toFullPriceOfType(super.getType("Компьютерное оборудование"));
     }
 
     @PostMapping(value = "/filterTelecom", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getTelecom()
     {
-        return super.getType("Телекомуникационные");
+        return super.toFullPriceOfType(super.getType("Телекомуникационные"));
     }
 
     @PostMapping(value = "/filterOffice", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getOffice()
     {
-        return super.getType("Офисное оборудование");
+        return super.toFullPriceOfType(super.getType("Офисное оборудование"));
     }
 
     @PostMapping(value = "/filterPozhar", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getPozhar()
     {
-        return super.getType("Пожарно-охранное оборудование");
+        return super.toFullPriceOfType(super.getType("Пожарно-охранное оборудование"));
     }
 
     @PostMapping(value = "/filterCifro", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getCifro()
     {
-        return super.getType("Цифровое");
+        return super.toFullPriceOfType(super.getType("Цифровое"));
     }
 
     @PostMapping(value = "/filterElectromont", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getElectromont()
     {
-        return super.getType("Электромонтажное");
+        return super.toFullPriceOfType(super.getType("Электромонтажное"));
     }
 
     @PostMapping(value = "/filterMont", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getMont()
     {
-        return super.getType("Монтажное оборудование");
+        return super.toFullPriceOfType(super.getType("Монтажное оборудование"));
     }
 
 
     @PostMapping(value = "/filterAkkamul", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getAkkamul()
     {
-        return super.getType("Аккумуляторы");
+        return super.toFullPriceOfType(super.getType("Аккумуляторы"));
     }
 
 
     @PostMapping(value = "/filterBezCeni", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getBezCeni()
     {
-        return super.getBezCeni();
+        return super.toFullPriceOfType(super.getBezCeni());
     }
 
 
     @PostMapping(value = "/filterTeploAndDef", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MealWithExceed> getTeploAndDef()
     {
-        return super.getType("Теплоизоляция и защитные покрытия");
+        return super.toFullPriceOfType(super.getType("Теплоизоляция и защитные покрытия"));
     }
 
 /*

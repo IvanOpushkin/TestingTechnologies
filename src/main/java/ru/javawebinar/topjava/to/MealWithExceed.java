@@ -29,6 +29,7 @@ public class MealWithExceed extends BaseTo {
     private Integer fullPriceOfAll;
     private final boolean exceed;
 
+
     public MealWithExceed(@JsonProperty("id") Integer id,
                           @JsonProperty("dateTime") LocalDateTime dateTime,
                           @JsonProperty("description") String description,

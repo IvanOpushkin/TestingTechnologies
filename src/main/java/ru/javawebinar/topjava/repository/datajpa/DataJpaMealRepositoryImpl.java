@@ -17,6 +17,8 @@ import static java.time.LocalDateTime.of;
 @Repository
 public class DataJpaMealRepositoryImpl implements MealRepository {
 
+
+
     @Autowired
     private CrudMealRepository crudMealRepository;
 
@@ -70,25 +72,8 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
 
     @Override
     public List<Meal> getAll(int userId) {
-        List<Meal> noRichi = crudMealRepository.getAll(100000);
 
-        //Временная заменя в самой проге
-
-        for (Meal richi : noRichi)
-        {
-
-            if (richi.getPrimechanie().contains("ричи"))
-            {
-                //System.out.println("1");
-                richi.setDescription(richi.getDescription()+"ричи");
-                String primechChange = "" + richi.getPrimechanie().replace("ричи","");
-                //System.out.println(primechChange);
-                richi.setPrimechanie(primechChange);
-
-            }
-
-        }
-        return noRichi;
+        return crudMealRepository.getAll(100000);
     }
 
     @Override
@@ -101,3 +86,23 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
         return crudMealRepository.getWithUser(id, 100000);
     }
 }
+
+
+//Временная заменя в самой проге
+
+//По гет олу
+
+// for (Meal richi : noRichi)
+// {
+
+//   if (richi.getPrimechanie().contains("ричи"))
+//   {
+//System.out.println("1");
+//     richi.setDescription(richi.getDescription()+"ричи");
+//     String primechChange = "" + richi.getPrimechanie().replace("ричи","");
+//System.out.println(primechChange);
+//     richi.setPrimechanie(primechChange);
+
+//  }
+
+//  }

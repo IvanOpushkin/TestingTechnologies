@@ -127,6 +127,26 @@ public abstract class AbstractMealController {
                 AuthorizedUser.getCaloriesPerDay()
         );
     }
+
+    public List<MealWithExceed> toFullPriceOfType(List<MealWithExceed> mealsAllOfType)
+    {
+        Integer fullPriceOfAll = 0;
+
+        for (MealWithExceed mwe : mealsAllOfType)
+        {
+            Integer prices = mwe.getCena() * mwe.getKolvo();
+            fullPriceOfAll=fullPriceOfAll+prices;
+        }
+
+        //В хорошем коде будет у первого значения
+        for (MealWithExceed mwe : mealsAllOfType)
+        {
+            mwe.setFullPriceOfAll(fullPriceOfAll);
+        }
+
+        return mealsAllOfType;
+
+    }
 }
 
 /*
