@@ -30,7 +30,7 @@
     </style>
 </head>
 <jsp:include page="fragments/headTag.jsp"/>
-<body>
+<body style="background-color: white">
 
 <!-- Выключает таблицы -->
 <script type="text/javascript" src="resources/js/datatablesUtil.js" defer></script>
@@ -43,7 +43,7 @@
 </br>
 </br>
 
-<div class="jumbotron">
+<div class="jumbotron" style="background-color: white">
     <div class="container">
         <div>
             <div> <!-- Ответственный За ширину (mb) -->
