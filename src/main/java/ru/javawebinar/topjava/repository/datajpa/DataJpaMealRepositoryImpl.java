@@ -28,10 +28,22 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
     @Override
     @Transactional
     public Meal save(Meal meal, int userId) {
+
+
+        //Вопрос ошибки по idшкам (Meal должно быть новым, чтобы пройти в новую таблицу получается)
+
+       //if (userId != 200001)
         if (!meal.isNew() && get(meal.getId(), userId) == null) {
             return null;
         }
+
+       // else meal.setId(meal.getId()+1000000);
+
+        if (userId != 200001)
         meal.setUser(crudUserRepository.getOne(100000));
+        else {meal.setId(meal.getId() + 1000000);
+            meal.setUser(crudUserRepository.getOne(200001));
+        }
 
        //DEFAULT OPTIONS SETUP
         if (meal.getType1() == null)
@@ -51,6 +63,7 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
         if (meal.getDescription() == null)
         meal.setDescription("o");
         //(K)DEFAULT OPTIONS SETUP
+
         return crudMealRepository.save(meal);
     }
 
@@ -59,21 +72,35 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
     {
 
 
-        return crudMealRepository.delete(id, 100000) != 0;
+        Meal transfer = getWithUser(id, 100000);
+        //transfer.getUser().setId(200001);
+        //Там же до трёх миллиардов всё норм
+        transfer.setId(null);
+        transfer.getUser().setId(200001);
+        crudMealRepository.save(transfer);
 
+
+        //Автоматика по ID
+        //crudMealRepository.save(transfer);
+
+        //возможна ошибка в параллельных таблицах
+        return crudMealRepository.delete(id, 100000) != 0;
 
     }
 
     @Override
     public Meal get(int id, int userId) {
+
+        //Мб прокатит тк единичного вызова товара нет
         Meal meal = crudMealRepository.findOne(id);
         return meal != null && meal.getUser().getId() == 100000 ? meal : null;
     }
 
     @Override
     public List<Meal> getAll(int userId) {
-
+            if (userId!=200001)
         return crudMealRepository.getAll(100000);
+            else return crudMealRepository.getAll(200001);
     }
 
     @Override
