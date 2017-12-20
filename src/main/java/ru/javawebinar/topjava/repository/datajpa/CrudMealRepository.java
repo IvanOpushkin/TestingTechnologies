@@ -10,7 +10,9 @@ import ru.javawebinar.topjava.model.Meal;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Transactional(readOnly = true)
+//Было ТРУ, ВИДИМО ЭТО НЕ ДАВАЛО ОДНОВРЕМЕННУЮ ЗАПИСЬ С ЧТЕНИЕМ ХМ.
+// МБ НЬЮ ЕРРОРС.
+@Transactional(readOnly = false)
 public interface CrudMealRepository extends JpaRepository<Meal, Integer> {
 
     @Modifying
