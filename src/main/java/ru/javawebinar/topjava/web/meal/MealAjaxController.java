@@ -153,6 +153,11 @@ public class MealAjaxController extends AbstractMealController {
     {
         return super.toFullPriceOfType(super.getType("Теплоизоляция и защитные покрытия"));
     }
+ @PostMapping(value = "/filterCableProduction", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MealWithExceed> getCableProduction()
+    {
+        return super.toFullPriceOfType(super.getType("Кабельная продукция"));
+    }
 
 /*
     @Override

@@ -119,6 +119,13 @@ public class Meal extends AbstractBaseEntity {
     @SafeHtml(groups = {View.ValidatedRestUI.class})
     private String picture;
 
+    //polka
+    //7
+    @Column(name = "polka", nullable = false)
+    @SafeHtml(groups = {View.ValidatedRestUI.class})
+    private String polka;
+
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
@@ -132,12 +139,12 @@ public class Meal extends AbstractBaseEntity {
     public Meal() {
     }
 
-    public Meal(LocalDateTime dateTime, String description, String calories, String type1, String type2, int cod, String naimenovanie, String proizvoditel, String edizmereniya, Integer kolvo, Integer cena, String primechanie, String articul, String picture) {
+    public Meal(LocalDateTime dateTime, String description, String calories, String type1, String type2, int cod, String naimenovanie, String proizvoditel, String edizmereniya, Integer kolvo, Integer cena, String primechanie, String articul, String picture, String polka) {
 
-        this(null, dateTime, description, calories, type1, type2, cod, naimenovanie, proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture);
+        this(null, dateTime, description, calories, type1, type2, cod, naimenovanie, proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture, polka);
     }
 
-    public Meal(Integer id, LocalDateTime dateTime, String description, String calories, String type1, String type2, int cod, String naimenovanie, String proizvoditel, String edizmereniya, Integer kolvo, Integer cena, String primechanie, String articul, String picture) {
+    public Meal(Integer id, LocalDateTime dateTime, String description, String calories, String type1, String type2, int cod, String naimenovanie, String proizvoditel, String edizmereniya, Integer kolvo, Integer cena, String primechanie, String articul, String picture, String polka) {
         super(id);
         this.dateTime = dateTime;
         this.description = description;
@@ -154,6 +161,7 @@ public class Meal extends AbstractBaseEntity {
         this.primechanie = primechanie;
         this.articul = articul;
         this.picture = picture;
+        this.polka = polka;
        // this.fullPrice = kolvo*cena;
 
     }
@@ -293,13 +301,20 @@ public class Meal extends AbstractBaseEntity {
         this.type2 = type2;
     }
 
+    public String getPolka() {
+        return polka;
+    }
+
+    public void setPolka(String polka) {
+        this.polka = polka;
+    }
 
     @Override
     public String toString() {
         return "Meal{" +
                 "dateTime=" + dateTime +
                 ", description='" + description + '\'' +
-              ", calories='" + calories + '\'' +
+                ", calories='" + calories + '\'' +
                 ", type1='" + type1 + '\'' +
                 ", type2='" + type2 + '\'' +
                 ", cod=" + cod +
@@ -311,6 +326,7 @@ public class Meal extends AbstractBaseEntity {
                 ", primechanie='" + primechanie + '\'' +
                 ", articul='" + articul + '\'' +
                 ", picture='" + picture + '\'' +
+                ", polka='" + polka + '\'' +
                 ", user=" + user +
                 '}';
     }

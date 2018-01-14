@@ -205,6 +205,16 @@ function updateTableTeploAndDef() {
     });
 }
 
+//15.Кабельная продукция
+function updateTableCableProduction() {
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl + "filterCableProduction",
+        data: $("#filterCableProduction").serialize(),
+        success: updateTableByData
+    });
+}
+
 
 function clearFilterZashitLotok() {
     $("#filterZashitLotok")[0].reset();
@@ -312,6 +322,7 @@ $(function () {
                        return full.fullPriceOfAll;
                    }
                },
+
                //Full Price Try
 
                /*
@@ -328,6 +339,12 @@ $(function () {
                {
                    "data": "primechanie"
                },
+
+               //Прямой ли вызов в базу или по Спрингу Джаве?
+               {
+                   "data": "polka"
+               },
+               //Получается по СПРИНГУ, Обычные данные читает. Запись не настроена
                {
                    "render": renderEditBtn,
                    "defaultContent": "",

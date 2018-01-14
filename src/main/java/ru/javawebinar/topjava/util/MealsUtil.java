@@ -66,7 +66,7 @@ public class MealsUtil {
 
     public static MealWithExceed createWithExceed(Meal meal, boolean exceeded) {
         return new MealWithExceed(meal.getId(), meal.getDateTime(), meal.getDescription(), meal.getCalories(), meal.getType1(), meal.getType2(), meal.getCod(), meal.getNaimenovanie(),
-                meal.getProizvoditel(), meal.getEdizmereniya(), meal.getKolvo(), meal.getCena(), meal.getPrimechanie(), meal.getArticul(), meal.getPicture(), exceeded);
+                meal.getProizvoditel(), meal.getEdizmereniya(), meal.getKolvo(), meal.getCena(), meal.getPrimechanie(), meal.getArticul(), meal.getPicture(),meal.getPolka(), exceeded);
     }
 }
 

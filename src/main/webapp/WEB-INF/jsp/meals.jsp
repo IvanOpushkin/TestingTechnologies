@@ -28,6 +28,13 @@
 
 
     </style>
+
+    <script type="text/javascript"
+            src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
 </head>
 <jsp:include page="fragments/headTag.jsp"/>
 <body style="background-color: white">
@@ -444,6 +451,28 @@
                         <!--(К)Теплоизоляция и защитные покрытия -->
                         <!--(К)Теплоизоляция и защитные покрытия -->
 
+                        <!--Кабельная продукция -->
+                        <!--Кабельная продукция -->
+                        <!--Кабельная продукция -->
+                        <td>
+                            <form id="filterCableProduction">
+
+                            </form>
+                            <!-- </div> --> <!--Белая полоска под часть с заполнителями -->
+                            <div>
+
+                                <a class="btn btn-default" type="button" style="width:100%"
+                                   onclick="updateTableCableProduction()">
+                                    Кабельная продукция <span class="glyphicon glyphicon-filter"
+                                                       aria-hidden="true"></span>
+                                </a>
+
+                            </div>
+                        </td>
+                        <!--(К)Кабельная продукция -->
+                        <!--(К)Кабельная продукция -->
+                        <!--(К)Кабельная продукция -->
+
 
 
 
@@ -484,6 +513,7 @@
                <th>Цена Типа</th>
 
                 <th>Примечание</th>
+                <th>Полка</th>
 
 
                 <th></th>
@@ -492,6 +522,46 @@
             </tr>
             </thead>
         </table>
+
+
+<script>
+        $(document).ready(function() {
+        $('#example').DataTable( {
+        "footerCallback": function ( row, data, start, end, display ) {
+        var api = this.api(), data;
+
+        // Remove the formatting to get integer data for summation
+        var intVal = function ( i ) {
+        return typeof i === 'string' ?
+        i.replace(/[\$,]/g, '')*1 :
+        typeof i === 'number' ?
+        i : 0;
+        };
+
+        // Total over all pages
+        total = api
+        .column( 4 )
+        .data()
+        .reduce( function (a, b) {
+        return intVal(a) + intVal(b);
+        }, 0 );
+
+        // Total over this page
+        pageTotal = api
+        .column( 4, { page: 'current'} )
+        .data()
+        .reduce( function (a, b) {
+        return intVal(a) + intVal(b);
+        }, 0 );
+
+        // Update footer
+        $( api.column( 4 ).footer() ).html(
+        '$'+pageTotal +' ( $'+ total +' total)'
+        );
+        }
+        } );
+        } );
+</script>
     </div>
 </div>
 
@@ -683,12 +753,23 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="polka" class="control-label col-xs-3">Полка</label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="polka" name="polka" placeholder="1000">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
                         <label for="picture" class="control-label col-xs-3">Картинко-имя</label>
 
                         <div class="col-xs-9">
                             <input type="text" class="form-control" id="picture" name="picture" placeholder="1000">
                         </div>
                     </div>
+
+
 
 
                     <div class="form-group">

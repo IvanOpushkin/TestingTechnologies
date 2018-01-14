@@ -26,6 +26,7 @@ public class MealWithExceed extends BaseTo {
     private final String primechanie;
     private final String articul;
     private final String picture;
+    private final String polka;
     private Integer fullPriceOfAll;
     private final boolean exceed;
 
@@ -45,6 +46,7 @@ public class MealWithExceed extends BaseTo {
                           @JsonProperty("primechanie") String primechanie,
                           @JsonProperty("articul") String articul,
                           @JsonProperty("picture") String picture,
+                          @JsonProperty("polka") String polka,
                           @JsonProperty("exceed") boolean exceed) {
         super(id);
 
@@ -62,9 +64,11 @@ public class MealWithExceed extends BaseTo {
         this.primechanie=primechanie;
         this.articul=articul;
         this.picture=picture;
+        this.polka=polka;
 
 
       //  this.fullPrice=kolvo*cena;
+        //Автоцвет в тру
         this.exceed = true;
     }
 
@@ -138,6 +142,10 @@ public class MealWithExceed extends BaseTo {
         this.fullPriceOfAll = fullPriceOfAll;
     }
 
+    public String getPolka() {
+        return polka;
+    }
+
     @Override
     public String toString() {
         return "MealWithExceed{" +
@@ -155,6 +163,8 @@ public class MealWithExceed extends BaseTo {
                 ", primechanie='" + primechanie + '\'' +
                 ", articul='" + articul + '\'' +
                 ", picture='" + picture + '\'' +
+                ", polka='" + polka + '\'' +
+                ", fullPriceOfAll=" + fullPriceOfAll +
                 ", exceed=" + exceed +
                 '}';
     }

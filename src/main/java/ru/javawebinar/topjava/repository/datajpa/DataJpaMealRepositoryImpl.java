@@ -62,6 +62,8 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
         meal.setCalories("o");
         if (meal.getDescription() == null)
         meal.setDescription("o");
+        if (meal.getPolka() == null)
+            meal.setPolka("o");
         //(K)DEFAULT OPTIONS SETUP
 
         return crudMealRepository.save(meal);
