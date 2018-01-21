@@ -32,7 +32,7 @@ public abstract class AbstractMealController {
 
     public void delete(int id) {
         int userId = AuthorizedUser.id();
-        if (userId==200000 || userId==200005 || userId==200006 || userId==200007) return;
+        if (userId==200000) return;
         log.info("delete meal {} for User {}", id, userId);
         service.delete(id, userId);
     }
@@ -48,7 +48,7 @@ public abstract class AbstractMealController {
 
     public Meal create(Meal meal) {
         int userId = AuthorizedUser.id();
-        if (userId==200000 || userId==200005 || userId==200006 || userId==200007) return null;
+        if (userId==200000) return null;
         checkNew(meal);
         log.info("create {} for User {}", meal, userId);
         return service.create(meal, userId);
@@ -56,7 +56,7 @@ public abstract class AbstractMealController {
 
     public void update(Meal meal, int id) {
         int userId = AuthorizedUser.id();
-        if (userId==200000 || userId==200005 || userId==200006 || userId==200007) return;
+        if (userId==200000) return;
         assureIdConsistent(meal, id);
         log.info("update {} for User {}", meal, userId);
         service.update(meal, userId);
