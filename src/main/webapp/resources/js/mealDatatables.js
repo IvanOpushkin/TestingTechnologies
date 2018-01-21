@@ -261,9 +261,9 @@ $(function () {
                {
                    "data": "type1"
                },
-              /* {
+               {
                    "data": "type2"
-               },*/
+               },
                {
                    "render": renderDeleteBtn,
                    //function(data, type, row)
