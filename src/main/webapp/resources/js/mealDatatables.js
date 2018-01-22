@@ -262,9 +262,7 @@ $(function () {
                    "data": "type1"
                },
 
-               {
-                   "data": "type2"
-               },
+
 
                {
                    "render": renderDeleteBtn,
