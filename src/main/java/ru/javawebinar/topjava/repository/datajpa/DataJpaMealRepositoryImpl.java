@@ -77,13 +77,38 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
         Meal transfer = getWithUser(id, 100000);
         //transfer.getUser().setId(200001);
         //Там же до трёх миллиардов всё норм
+        //Сохранение в таблицу по удалению
+
+
+
+        //Вставка две строчки на удаление если удаление и ниже две строчки из трансфера
+        /*if (userId != 200001) {
+            transfer.setId(null);
+            transfer.getUser().setId(200001);
+            crudMealRepository.save(transfer);
+        } */
+
         transfer.setId(null);
         transfer.getUser().setId(200001);
         crudMealRepository.save(transfer);
 
+        //Вставка две строчки на удаление если удаление и ниже две строчки из трансфера
+
+
+
 
         //Автоматика по ID
         //crudMealRepository.save(transfer);
+
+
+
+        //Вставка две строчки на удаление если удаление и выше две строчки из трансфера
+       /* if (userId == 200001)
+            return crudMealRepository.delete(id, 200001) != 0;*/
+        //Вставка две строчки на удаление если удаление и выше две строчки из трансфера
+
+
+
 
         //возможна ошибка в параллельных таблицах
         return crudMealRepository.delete(id, 100000) != 0;
