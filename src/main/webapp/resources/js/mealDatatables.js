@@ -277,7 +277,10 @@ $(function () {
 
                },
                {
-                   "data": "cod",
+                   "data": "cod"
+
+                   /*,
+
 
                    "render": function (data, type, full, meta) {
 
@@ -289,6 +292,7 @@ $(function () {
                        return x;
 
                    }
+                   \*/
                },
 
                {

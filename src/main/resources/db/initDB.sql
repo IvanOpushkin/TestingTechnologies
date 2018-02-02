@@ -1,6 +1,10 @@
 DROP TABLE IF EXISTS user_gays;
 
 
+
+--update meals set cod = '0' || cod WHERE description='ричи';
+
+--update mytable set name = 'a' || name, age = 'b' || age;
 --SELECT sum(kolvo*cena) FROM meals WHERE type1='Сетевое Оборудование'
 
 
