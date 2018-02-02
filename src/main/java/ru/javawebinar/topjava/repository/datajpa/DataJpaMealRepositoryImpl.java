@@ -106,7 +106,7 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
                         if (meal.getDateTime() == null)
                             meal.setDateTime(LocalDateTime.now());
                         if (meal.getCod() == null)
-                            meal.setCod(0);
+                            meal.setCod("0");
                         if (meal.getCena() == null)
                             meal.setCena(0);
                         if (meal.getKolvo() == null)
@@ -163,7 +163,7 @@ public class DataJpaMealRepositoryImpl implements MealRepository {
         if (meal.getDateTime() == null)
         meal.setDateTime(LocalDateTime.now());
         if (meal.getCod() == null)
-        meal.setCod(0);
+        meal.setCod("0");
         if (meal.getCena() == null)
         meal.setCena(0);
         if (meal.getKolvo() == null)

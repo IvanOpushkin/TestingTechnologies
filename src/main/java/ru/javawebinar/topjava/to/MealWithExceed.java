@@ -14,7 +14,7 @@ public class MealWithExceed extends BaseTo {
 
     private final String type1;
     private final String type2;
-    private final int cod;
+    private final String cod;
     private final String naimenovanie;
 
     //proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture
@@ -37,7 +37,7 @@ public class MealWithExceed extends BaseTo {
                         @JsonProperty("calories") String calories,
                           @JsonProperty("type1") String type1,
                           @JsonProperty("type2") String type2,
-                          @JsonProperty("cod") int cod,
+                          @JsonProperty("cod") String cod,
                           @JsonProperty("naimenovanie") String naimenovanie,
                           @JsonProperty("proizvoditel") String proizvoditel,
                           @JsonProperty("edizmereniya") String edizmereniya,
@@ -93,7 +93,7 @@ public class MealWithExceed extends BaseTo {
         return type2;
     }
 
-    public int getCod() {
+    public String getCod() {
         return cod;
     }
 

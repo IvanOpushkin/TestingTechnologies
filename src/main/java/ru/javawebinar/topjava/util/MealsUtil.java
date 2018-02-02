@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 
 public class MealsUtil {
 
+    //Сортировка Цена вместо Кодов, в корневых методах
+
     private MealsUtil() {
     }
 
@@ -20,7 +22,7 @@ public class MealsUtil {
     public static List<MealWithExceed> getFilteredWithExceeded(Collection<Meal> meals, LocalTime startTime, LocalTime endTime, int caloriesPerDay) {
         Map<LocalDate, Integer> caloriesSumByDate = meals.stream()
                 .collect(
-                        Collectors.groupingBy(Meal::getDate, Collectors.summingInt(Meal::getCod))
+                        Collectors.groupingBy(Meal::getDate, Collectors.summingInt(Meal::getCena))
 //                      Collectors.toMap(Meal::getDate, Meal::getCalories, Integer::sum)
                 );
 
@@ -33,7 +35,7 @@ public class MealsUtil {
     public static List<MealWithExceed> getFilteredWithExceededByCycle(List<Meal> meals, LocalTime startTime, LocalTime endTime, int caloriesPerDay) {
 
         final Map<LocalDate, Integer> caloriesSumByDate = new HashMap<>();
-        meals.forEach(meal -> caloriesSumByDate.merge(meal.getDate(), meal.getCod(), Integer::sum));
+        meals.forEach(meal -> caloriesSumByDate.merge(meal.getDate(), meal.getCena(), Integer::sum));
 
         final List<MealWithExceed> mealsWithExceeded = new ArrayList<>();
         meals.forEach(meal -> {
@@ -56,7 +58,7 @@ public class MealsUtil {
 
         return listDayMeals
                 .stream().flatMap(dayMeals -> {
-                    boolean exceed = dayMeals.stream().mapToInt(Meal::getCod).sum() > caloriesPerDay;
+                    boolean exceed = dayMeals.stream().mapToInt(Meal::getCena).sum() > caloriesPerDay;
                     return dayMeals.stream().filter(meal ->
                             DateTimeUtil.isBetween(meal.getTime(), startTime, endTime))
                             .map(meal -> createWithExceed(meal, exceed));

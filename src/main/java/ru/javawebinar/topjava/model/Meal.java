@@ -57,11 +57,13 @@ public class Meal extends AbstractBaseEntity {
 
 
 
-    @Column(name = "cod", nullable = false, columnDefinition = "Integer default 0")
+    @Column(name = "cod", nullable = false
+           // , columnDefinition = "Integer default 0"
+    )
     //@Range(min = 10, max = 5000)
     //@NotBlank
     //@SafeHtml(groups = {View.ValidatedRestUI.class})
-    private Integer cod;
+    private String cod;
 
     @Column(name = "naimenovanie", nullable = false)
     //@NotBlank - пустота в поле разрешить убрав
@@ -139,12 +141,12 @@ public class Meal extends AbstractBaseEntity {
     public Meal() {
     }
 
-    public Meal(LocalDateTime dateTime, String description, String calories, String type1, String type2, int cod, String naimenovanie, String proizvoditel, String edizmereniya, Integer kolvo, Integer cena, String primechanie, String articul, String picture, String polka) {
+    public Meal(LocalDateTime dateTime, String description, String calories, String type1, String type2, String cod, String naimenovanie, String proizvoditel, String edizmereniya, Integer kolvo, Integer cena, String primechanie, String articul, String picture, String polka) {
 
         this(null, dateTime, description, calories, type1, type2, cod, naimenovanie, proizvoditel, edizmereniya, kolvo, cena, primechanie, articul, picture, polka);
     }
 
-    public Meal(Integer id, LocalDateTime dateTime, String description, String calories, String type1, String type2, int cod, String naimenovanie, String proizvoditel, String edizmereniya, Integer kolvo, Integer cena, String primechanie, String articul, String picture, String polka) {
+    public Meal(Integer id, LocalDateTime dateTime, String description, String calories, String type1, String type2, String cod, String naimenovanie, String proizvoditel, String edizmereniya, Integer kolvo, Integer cena, String primechanie, String articul, String picture, String polka) {
         super(id);
         this.dateTime = dateTime;
         this.description = description;
@@ -174,11 +176,11 @@ public class Meal extends AbstractBaseEntity {
         return description;
     }
 
-    public Integer getCod() {
+    public String getCod() {
         return cod;
     }
 
-    public void setCod(Integer cod) {
+    public void setCod(String cod) {
         this.cod = cod;
     }
 
