@@ -669,7 +669,7 @@
                         <label for="cod" class="control-label col-xs-3">Код</label>
 
                         <div class="col-xs-9">
-                            <input type="number" class="form-control" id="cod" name="cod">
+                            <input type="text" class="form-control" id="cod" name="cod">
                         </div>
 
                         <script type="text/javascript">
