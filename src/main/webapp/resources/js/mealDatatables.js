@@ -244,8 +244,10 @@ $(function () {
 
     datatableApi = $('#datatable').DataTable(extendsOpts({
 
+
         "columns"
        :
+
            [
                {
                    "data": "picture",
@@ -311,7 +313,11 @@ $(function () {
                },
 
                {
-                   "data": "cena"
+                   "data": "cena",
+
+                   "render": function (data, type, full, meta) {
+                       return full.cena + "р.";
+                   }
                },
                {
                    "data": "fullPrice",
