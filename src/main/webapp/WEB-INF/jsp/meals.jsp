@@ -521,6 +521,33 @@
 
             </tr>
             </thead>
+        <tfoot>
+
+        <tr>
+
+            <th style="border:1px solid #ddd;">Картинка</th>
+            <th style="border:1px solid #ddd;">Артикул</th>
+            <th style="border:1px solid #ddd;">Тип1</th>
+            <!--<th>Тип2</th>-->
+            <th style="border:1px solid #ddd;">Del</th>
+            <th style="border:1px solid #ddd;">*Код*</th>
+            <th style="border:1px solid #ddd;">Наименование</th>
+            <th style="border:1px solid #ddd;">Производитель</th>
+            <th style="border:1px solid #ddd;">Ед.изм</th>
+            <th style="border:1px solid #ddd;">Кол-во</th>
+            <th style="border:1px solid #ddd;">Цена</th>
+            <th style="border:1px solid #ddd;">Общая цена</th>
+            <th style="border:1px solid #ddd;">Цена Типа</th>
+
+            <th style="border:1px solid #ddd;">Примечание</th>
+            <th style="border:1px solid #ddd;">Место</th>
+
+
+            <th style="border:1px solid #ddd;"></th>
+
+
+        </tr>
+        </tfoot>
         </table>
 
 
